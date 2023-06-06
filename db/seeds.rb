@@ -46,7 +46,7 @@ fish_seafood_names = [
 fish_seafood_names.each do |name|
   ingredient = Ingredient.create!(
     name: name,
-    category: Category.find_by(name: "fish and seafood")
+    category: Category.find_by(name: "Fish and seafood")
   )
   puts "Created ingredient: #{ingredient.name}"
 end
@@ -67,7 +67,7 @@ meat_names = [
 meat_names.each do |name|
   ingredient = Ingredient.create!(
     name: name,
-    category: Category.find_by(name: "meat")
+    category: Category.find_by(name: "Meat")
   )
   puts "Created ingredient: #{ingredient.name}"
 end
@@ -126,7 +126,7 @@ fruit_names = [
 fruit_names.each do |name|
   ingredient = Ingredient.create!(
     name: name,
-    category: Category.find_by(name: "fruit")
+    category: Category.find_by(name: "Fruit")
   )
   puts "Created ingredient: #{ingredient.name}"
 end
