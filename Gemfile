@@ -76,3 +76,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# Light-Weight authorization using pundit
+gem 'pundit'
