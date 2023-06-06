@@ -84,7 +84,7 @@ rice_legumes_names = [
   "Quinoa"
 ]
 
-meat_names.each do |name|
+rice_legumes_names.each do |name|
   ingredient = Ingredient.create!(
     name: name,
     category: Category.find_by(name: "Rice and legumes")
@@ -219,7 +219,7 @@ bakery_names = [
   "Baking powder",
   "Baking soda",
   "Sandwick bread",
-  "Bread",
+  "Bread"
 ]
 
 bakery_names.each do |name|
