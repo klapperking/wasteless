@@ -1,0 +1,7 @@
+<h1>Pick your ingredients!</h1>
+
+<% @inventory.inventory_ingredients.each do |inventory_ingredient| %>
+  <%= inventory_ingredient.ingredient.name %>
+  <%= inventory_ingredient.quantity %>
+    <%= inventory_ingredient.ingredient.category.measuring_unit %>
+<% end %>

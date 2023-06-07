@@ -1,6 +1,6 @@
 class InventoryIngredient < ApplicationRecord
   # callbacks
-  after_validation :set_expiration_date
+  # after_validation :set_expiration_date
 
   # relations
   belongs_to :ingredient
@@ -8,7 +8,7 @@ class InventoryIngredient < ApplicationRecord
 
   # validations
   validates :quantity, presence: true
-  validates_with :quantity_valid_float?
+  # validates_with :quantity_valid_float?
 
   def set_expiration_date
     # get expiration date from the ingredient category
@@ -17,7 +17,7 @@ class InventoryIngredient < ApplicationRecord
 
   private
 
-  def quantity_valid_float?
-    !!Float(quantity) rescue false
-  end
+  # def quantity_valid_float?
+  #   # !!Float(quantity) rescue false
+  # end
 end

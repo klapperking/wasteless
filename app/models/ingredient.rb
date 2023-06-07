@@ -1,6 +1,7 @@
 class Ingredient < ApplicationRecord
   # relations
   belongs_to :category
+  has_many :inventory_ingredients
 
   # validations
   validates :name, presence: true

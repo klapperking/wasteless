@@ -1,0 +1,5 @@
+<%= simple_form_for [@inventory, @inventory_ingredient] do |f| %>
+  <%= f.input :ingredient_id, collection: Ingredient.all %>
+  <%= f.input :quantity %>
+  <%= f.submit %>
+<% end %>
