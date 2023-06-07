@@ -8,5 +8,4 @@ class Ingredient < ApplicationRecord
   def expiry_date_from(date)
     date + category.days_to_expiry
   end
-
 end
