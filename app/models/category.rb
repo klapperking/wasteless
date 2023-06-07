@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
   # relations
-  has_many :ingredients
+  has_many :ingredients, dependent: :destroy
 
   # validations
   validates :name, presence: true, uniqueness: true
