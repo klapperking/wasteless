@@ -1,9 +1,16 @@
 class User < ApplicationRecord
+  # devise methods
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
+  # callbacks
+  after_validation :create_inventory, :create_shopping_list
+
   # relations
-  has_one :inventory
-  has_one :shopping_list
-  has_many :recipes
-  has_many :to_be_cookeds
+  has_one :inventory, dependent: :destroy
+  has_one :shopping_list, dependent: :destroy
+  has_many :recipes, dependent: :destroy
+  has_many :to_be_cookeds, dependent: :destroy
 
   # validations
   validates :first_name, presence: true
@@ -22,7 +29,13 @@ class User < ApplicationRecord
                           message: "must be at least 5 characters"
                         }
 
-  # devise methods
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  private
+
+  def create_inventory
+    self.inventory = Inventory.new
+  end
+
+  def create_shopping_list
+    self.shopping_list = ShoppingList.new(name: "#{first_name}'s Shopping List")
+  end
 end

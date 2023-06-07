@@ -1,4 +1,10 @@
 class ShoppingListIngredient < ApplicationRecord
-  belongs_to :shopping_list
+  # relations
   belongs_to :ingredient
+  belongs_to :shopping_list
+
+  # validations
+  validates :ingredient, presence: true
+  validates :shopping_list, presence: true
+  validates :quantity, presence: true
 end

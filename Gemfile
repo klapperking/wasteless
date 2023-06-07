@@ -79,3 +79,6 @@ end
 
 # Light-Weight authorization using pundit
 gem 'pundit'
+
+# Gem for chart with JS
+gem 'chartkick'

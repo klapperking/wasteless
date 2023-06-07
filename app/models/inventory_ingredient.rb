@@ -7,17 +7,13 @@ class InventoryIngredient < ApplicationRecord
   belongs_to :inventory
 
   # validations
-  validates :quantity, presence: true
-  # validates_with :quantity_valid_float?
-
-  def set_expiration_date
-    # get expiration date from the ingredient category
-    this.expiration_date = ingredient.expiry_date_from(Date.today)
-  end
+  validates :ingredient, presence: true
+  validates :inventory, presence: true
+  validates :quantity, presence: true, numericality: true
 
   private
 
-  # def quantity_valid_float?
-  #   # !!Float(quantity) rescue false
-  # end
+  def set_expiration_date
+    self.expiration_date = ingredient.expiry_date_from(Date.today)
+  end
 end

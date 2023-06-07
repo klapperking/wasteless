@@ -1,9 +1,15 @@
 .navbar-lw {
   justify-content: space-around;
   background: white;
-  border-bottom: solid 0.5px black;
+  border-bottom: solid 0.5px gray;
   height: 88.5px;
   width: 100%;
+}
+
+.sticky-container {
+  position: sticky;
+  top: 0px;
+  z-index: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
