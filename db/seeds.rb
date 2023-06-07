@@ -13,6 +13,14 @@ martin = { first_name: "Martin", last_name: "Klapper", email: "martin@wasteless.
   puts "Created #{user.first_name}"
 end
 
+puts "Creating inventories..."
+
+Inventory.create!(user: User.find_by(email: "florian@wasteless.es"))
+Inventory.create!(user: User.find_by(email: "martin@wasteless.es"))
+
+puts "Created #{Inventory.count} inventories."
+
+
 puts "Creating categories..."
 fish_seafood = { name: "Fish and seafood", days_to_expiry: 4, measuring_unit: "g" }
 meat = { name: "Meat", days_to_expiry: 6, measuring_unit: "g" }
@@ -183,8 +191,7 @@ liquid_names = [
   "Vinegar",
   "Honey",
   "Maple syrup",
-  "Coconut milk",
-  "Lemon juice"
+  "Coconut milk"
 ]
 
 liquid_names.each do |name|
