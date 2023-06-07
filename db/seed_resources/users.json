@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "first_name": "Florian",
+      "last_name": "Guerin",
+      "email": "florian@wasteless.es",
+      "password": "123456",
+      "password_confirmation": "123456",
+      "admin": true
+    },
+    {
+      "first_name": "Martin",
+      "last_name": "Klapper",
+      "email": "martin@wasteless.es",
+      "password": "123456",
+      "password_confirmation": "123456",
+      "admin": false
+    }
+  ]
+}
