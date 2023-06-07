@@ -1,0 +1,28 @@
+.navbar-bottom {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  background: #C0FDFB;
+  border-top: solid 0.5px gray;
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+
+  i {
+    display: flex;
+    font-size: 30px;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  a {
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    border-right: solid 0.5px gray;
+    text-decoration: none;
+  }
+}
