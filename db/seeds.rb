@@ -51,12 +51,10 @@ puts "---------------------------"
 
 puts "Creating recipes..."
 
-
 puts "Created #{Recipes.count}"
 puts "---------------------------"
 
 puts "Populating Inventories..."
-
 
 puts "Done"
 puts "---------------------------"

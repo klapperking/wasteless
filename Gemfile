@@ -79,3 +79,6 @@ end
 
 # Light-Weight authorization using pundit
 gem 'pundit'
+
+# Active-Storage using Cloudinary
+gem "cloudinary"
