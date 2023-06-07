@@ -4,12 +4,11 @@
   border-radius: 5px;
   background-color: #ff0c0cc0;
   margin-bottom: 2px;
+  display: flex;
+  justify-content: space-between;
 }
 
 #ingredient-name {
-  position: relative;
-  left: 59px;
-  top: 8px;
   font-weight: bold;
   font-size: 20px;
   margin: 0;
@@ -18,9 +17,6 @@
 #ingredient-qty {
   width: auto;
   height: 20px;
-  position: relative;
-  left: 280px;
-  top: -25px;
   font-weight: bold;
   font-size: 20px;
   margin: 0;

@@ -4,8 +4,7 @@
   </div>
   <div>
     <h3>Recommended Ingredients:</h3>
-      <% recommended_ingredients = @ingredients.first(3) %>
-      <% recommended_ingredients.each do |ingredient| %>
+      <% @ingredients.first(3).each do |ingredient| %>
       <div class="ingredient-card">
         <p id="ingredient-name"><%= ingredient.name %></p>
         <p id="ingredient-qty">4</p>
