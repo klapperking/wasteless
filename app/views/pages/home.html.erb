@@ -1,2 +1,23 @@
 <div class="container-sm">
+  <div>
+    <%= pie_chart @my_pets, pie: true, colors: ["FF0C0D", "#FF4E10", "#FF8E15", "#FAB732", "#ABB333", "#68B34B"], width: "100%" %>
+  </div>
+  <div>
+    <h3>Recommended Ingredients:</h3>
+      <% recommended_ingredients = @ingredients.first(3) %>
+      <% recommended_ingredients.each do |ingredient| %>
+      <div class="ingredient-card">
+        <p id="ingredient-name"><%= ingredient.name %></p>
+        <p id="ingredient-qty">4</p>
+      </div>
+      <% end %>
+  </div>
+  <div>
+    <h3>Last Recipe Cooked:</h3>
+    <div class="recipe-card">
+        <h5>Pasta Bolognesa<%#= recipe.name %></h5>
+        <p> 4 ingredients<%#= recipe.ingredients.count %></p>
+        <p> 2 people</p>
+    </div>
+  </div>
 </div>

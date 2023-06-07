@@ -6,6 +6,12 @@
   width: 100%;
 }
 
+.sticky-container {
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }

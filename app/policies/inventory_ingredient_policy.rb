@@ -1,4 +1,4 @@
-class InventoryPolicy < ApplicationPolicy
+class InventoryIngredientPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     # def resolve
@@ -6,7 +6,7 @@ class InventoryPolicy < ApplicationPolicy
     # end
   end
 
-  def show?
-    record.user == user
+  def create?
+    record.inventory.user == user
   end
 end
