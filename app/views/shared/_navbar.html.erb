@@ -1,26 +1,28 @@
-<div class="navbar navbar-lw">
-  <div class="container-sm">
-    <div class="navbar-position"></div>
-    <div>
-      <%= image_tag "logo-green-cropped.PNG", class: "logo" %>
-    </div>
-    <div class="navbar-position">
-      <ul class="navbar-nav">
-        <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-            <!-- image_tag should be with the 'current_user.avatar' -->
-            <%= image_tag "tomato_icon.png", class:"avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" id="dropdown-absolute" aria-labelledby="navbarDropdown">
-              <%= link_to 'Profile', "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
+<div class="sticky-container">
+  <div class="navbar navbar-lw">
+    <div class="container-sm">
+      <div class="navbar-position"></div>
+      <div>
+        <%= image_tag "logo-green-cropped.PNG", class: "logo" %>
+      </div>
+      <div class="navbar-position">
+        <ul class="navbar-nav">
+          <% if user_signed_in? %>
+            <li class="nav-item dropdown">
+              <!-- image_tag should be with the 'current_user.avatar' -->
+              <%= image_tag "tomato_icon.png", class:"avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" id="dropdown-absolute" aria-labelledby="navbarDropdown">
+                <%= link_to 'Profile', "#", class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
