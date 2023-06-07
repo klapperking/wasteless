@@ -12,14 +12,14 @@ class User < ApplicationRecord
   validates :email, presence: true,
                     uniqueness: true,
                     format: {
-                      with: /`^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`/,
+                      with: /\A[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$\z/,
                       message: "is not an e-mail address"
                     }
 
   validates :password,  presence: true,
                         length: {
                           minimum: 5,
-                          message: "must be longer than 5 characters"
+                          message: "must be at least 5 characters"
                         }
 
   # devise methods

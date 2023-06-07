@@ -10,8 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< Updated upstream
 ActiveRecord::Schema[7.0].define(version: 2023_06_06_150121) do
 
+=======
+ActiveRecord::Schema[7.0].define(version: 2023_06_07_071644) do
+>>>>>>> Stashed changes
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -39,7 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_150121) do
   end
 
   create_table "inventory_ingredients", force: :cascade do |t|
-    t.integer "quantity"
+    t.float "quantity"
     t.date "expiration_date"
     t.bigint "ingredient_id", null: false
     t.bigint "inventory_id", null: false
@@ -104,7 +108,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_150121) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin"
+    t.boolean "admin", default: false, null: false
     t.string "first_name"
     t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
