@@ -1,7 +1,9 @@
-.navbar-lewagon {
-  justify-content: space-between;
+.navbar-lw {
+  justify-content: space-around;
   background: white;
   border-bottom: solid 0.5px black;
+  height: 88.5px;
+  width: 100%;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,4 +12,23 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+#dropdown-absolute {
+  position: absolute;
+  top: 75px;
+  right: -10px;
+
+  a {
+    text-align: right;
+  }
+}
+
+.dropdown-menu {
+  min-width: 6em !important;
+}
+
+.navbar-position {
+  text-align: right;
+  width: 20%;
 }

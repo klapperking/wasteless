@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-  be
   include Pundit::Authorization
 
   # pundit whitelisting - TODO: Update on the go
