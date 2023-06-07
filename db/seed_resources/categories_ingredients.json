@@ -1,0 +1,194 @@
+{
+  "categories_and_ingredients": [
+    {
+      "category_info": {
+        "name": "Fish and Seafood",
+        "days_to_expiry": 4,
+        "measuring_unit": "g"
+      },
+      "ingredients": [
+        "Salmon",
+        "Tuna",
+        "Shrimp",
+        "Trout",
+        "Sardines",
+        "Lobster",
+        "Fish"
+      ]
+    },
+    {
+      "category_info": {
+        "name": "Meat",
+        "days_to_expiry": 6,
+        "measuring_unit": "g"
+      },
+      "ingredients": [
+        "Chicken breast",
+        "minced beef",
+        "Pork chops",
+        "Lamb shoulder",
+        "Bacon",
+        "Turkey breast",
+        "Beef tenderloin",
+        "Sausages",
+        "Ham",
+        "Ground turkey"
+      ]
+    },
+    {
+      "category_info": {
+        "name": "Rice and Legumes",
+        "days_to_expiry": 4,
+        "measuring_unit": "g"
+      },
+      "ingredients": [
+        "Rice",
+        "Basmati rice",
+        "Black beans",
+        "Lentils",
+        "Chickpeas",
+        "Jasmine rice",
+        "Green lentils",
+        "Pinto beans",
+        "Quinoa"
+      ]
+    },
+    {
+      "category_info": {
+        "name": "Charcuterie",
+        "days_to_expiry": 180,
+        "measuring_unit": "g"
+      },
+      "ingredients": [
+        "Ham",
+        "Salami",
+        "Chorizo",
+        "Smoked bacon",
+        "Pastrami",
+        "Pepperoni",
+        "Iberico"
+      ]
+    },
+    {
+      "category_info": {
+        "name": "Fruit",
+        "days_to_expiry": 10,
+        "measuring_unit": "u."
+      },
+      "ingredients": [
+        "Apple",
+        "Banana",
+        "Orange",
+        "Strawberry",
+        "Grapes",
+        "Pineapple",
+        "Blueberries",
+        "Peach",
+        "Pear",
+        "Cherry"
+      ]
+    },
+    {
+      "category_info": {
+        "name": "Vegetables",
+        "days_to_expiry": 20,
+        "measuring_unit": "u."
+      },
+      "ingredients": [
+        "Carrot",
+        "Broccoli",
+        "Cauliflower",
+        "Spinach",
+        "Cucumber",
+        "Tomato",
+        "Lettuce",
+        "Potato",
+        "Onion",
+        "Garlic",
+        "Mushroom",
+        "Green beans",
+        "Peas",
+        "Eggplant",
+        "Cabbage",
+        "Sweet potato",
+        "Corn",
+        "Asparagus"
+      ]
+    },
+    {
+      "category_info": {
+        "name": "Dairy",
+        "days_to_expiry": 30,
+        "measuring_unit": "g"
+      },
+      "ingredients": [
+        "Butter",
+        "Cheese",
+        "Yogurt",
+        "Sour cream",
+        "Cream cheese",
+        "Greek yogurt"
+      ]
+    },
+    {
+      "category_info": {
+        "name": "Liquids",
+        "days_to_expiry": 30,
+        "measuring_unit": "ml"
+      },
+      "ingredients": [
+        "Vegetable oil",
+        "Olive oil",
+        "Vinegar",
+        "Honey",
+        "Maple syrup",
+        "Coconut milk"
+      ]
+    },
+    {
+      "category_info": {
+        "name": "Bread and baked goods",
+        "days_to_expiry": 15,
+        "measuring_unit": "g"
+      },
+      "ingredients": [
+        "Yeast",
+        "Baking powder",
+        "Baking soda",
+        "Sandwick bread",
+        "Bread"
+      ]
+    },
+    {
+      "category_info": {
+        "name": "Sauces",
+        "days_to_expiry": 365,
+        "measuring_unit": "ml"
+      },
+      "ingredients": [
+        "Lemon juice",
+        "Tomato sauce",
+        "Barbecue sauce",
+        "Soy sauce",
+        "Teriyaki sauce",
+        "Pesto sauce",
+        "Sweet chili sauce",
+        "Curry sauce"
+      ]
+    },
+    {
+      "category_info": {
+        "name": "Pasta",
+        "days_to_expiry": 365,
+        "measuring_unit": "g"
+      },
+      "ingredients": [
+        "Spaghetti",
+        "Fettuccine",
+        "Farfalle",
+        "Macaroni",
+        "Couscous"
+      ]
+    }
+  ]
+}

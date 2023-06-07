@@ -80,5 +80,8 @@ end
 # Light-Weight authorization using pundit
 gem 'pundit'
 
+# Active-Storage using Cloudinary
+gem "cloudinary"
+
 # Gem for chart with JS
 gem 'chartkick'
