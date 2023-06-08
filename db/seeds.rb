@@ -50,11 +50,40 @@ puts "Created #{Category.count} Categories and #{Ingredient.count} Ingredients"
 puts "---------------------------"
 
 puts "Creating recipes..."
+recipes_json = JSON.parse(File.read("#{seed_resource_dir}/recipes.json"))
 
-puts "Created #{Recipes.count}"
+recipes_json['recipes'].each do |recipe|
+  # read recipe attributes
+  recipe_attributes = {
+    name: recipe['name'],
+    description: recipe['description'],
+    number_of_people: recipe['number_of_people'],
+    user: User.all.sample
+  }
+
+  # attach photo to recipe from url
+  new_recipe = Recipe.new(recipe_attributes)
+  photo = URI.open(recipe['photo'])
+  new_recipe.photo.attach(io: photo, filename: recipe['photo'][-20..], content_type: 'image/png')
+
+  new_recipe.save!
+
+  # create Ingredients for given Recipe
+  recipe['recipe_ingredients'].each do |ingredient|
+    puts ingredient
+    recipe_ingredient_attrs = {
+      quantity: ingredient['quantity'],
+      ingredient: Ingredient.find_by(name: ingredient['name']),
+      recipe: Recipe.last
+    }
+    RecipeIngredient.create!(recipe_ingredient_attrs)
+  end
+end
+puts "Created #{Recipe.count} recipes"
 puts "---------------------------"
 
 puts "Populating Inventories..."
+# add 10 ingredients to each inventory with randomized quantity and expiry date;
 
 puts "Done"
 puts "---------------------------"

@@ -13,7 +13,10 @@
         "Trout",
         "Sardines",
         "Lobster",
-        "Fish"
+        "Fish",
+        "Squid",
+        "Prawn",
+        "Mussel"
       ]
     },
     {
@@ -32,7 +35,8 @@
         "Beef tenderloin",
         "Sausages",
         "Ham",
-        "Ground turkey"
+        "Ground turkey",
+        "minced pork"
       ]
     },
     {
@@ -50,7 +54,8 @@
         "Jasmine rice",
         "Green lentils",
         "Pinto beans",
-        "Quinoa"
+        "Quinoa",
+        "Green beans"
       ]
     },
     {
@@ -106,13 +111,15 @@
         "Onion",
         "Garlic",
         "Mushroom",
-        "Green beans",
+        "Green 2",
         "Peas",
         "Eggplant",
         "Cabbage",
         "Sweet potato",
         "Corn",
-        "Asparagus"
+        "Asparagus",
+        "Red Bell Pepper",
+        "Celery"
       ]
     },
     {
@@ -142,7 +149,11 @@
         "Vinegar",
         "Honey",
         "Maple syrup",
-        "Coconut milk"
+        "Coconut milk",
+        "White Wine",
+        "Red Wine",
+        "Seafood Stock",
+        "Milk"
       ]
     },
     {
@@ -155,7 +166,7 @@
         "Yeast",
         "Baking powder",
         "Baking soda",
-        "Sandwick bread",
+        "Sandwich bread",
         "Bread"
       ]
     },
@@ -188,6 +199,34 @@
         "Farfalle",
         "Macaroni",
         "Couscous"
+      ]
+    },
+    {
+      "category_info": {
+        "name": "Herbs",
+        "days_to_expiry": 14,
+        "measuring_unit": "g"
+      },
+      "ingredients": [
+        "Parsley",
+        "Cilantro",
+        "Basil",
+        "Mint",
+        "Chives",
+        "Bay leaf"
+      ]
+    },
+    {
+      "category_info": {
+        "name": "condiments",
+        "days_to_expiry": 50,
+        "measuring_unit": "g"
+      },
+      "ingredients": [
+        "Red Curry Paste",
+        "Paprika Powder",
+        "Saffron",
+        "Tomato paste"
       ]
     }
   ]
