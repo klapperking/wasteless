@@ -1,0 +1,47 @@
+.recipe-card {
+  width: 100%;
+  height: 93px;
+  background-color: #E8EDD5;
+  border-radius: 5px;
+  border: solid 1px black;
+  display: flex;
+}
+
+.recipe-details-card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 10px;
+
+  p {
+    margin: 0;
+  }
+
+  h5 {
+    margin: 0;
+  }
+}
+
+#recipe-photo {
+  width: 98px;
+  height: 100%;
+  border-radius: 5px 0 0 5px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#recipe-title {
+  height: 40%;
+  margin-top: 5px;
+}
+
+#recipe-nb-ingredients {
+  height: 30%;
+}
+
+#recipe-nb-people {
+  height: 30%;
+}

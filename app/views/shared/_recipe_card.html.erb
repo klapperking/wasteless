@@ -1,0 +1,16 @@
+<div class="recipe-card">
+        <div id="recipe-photo">
+          <%= cl_image_tag recipe.photo.key %>
+        </div>
+        <div class="recipe-details-card">
+          <div id="recipe-title">
+            <h5><%= recipe.name %></h5>
+          </div>
+          <div id="recipe-nb-ingredients">
+            <p><%= recipe.ingredients.count %> ingredients</p>
+          </div>
+          <div id="recipe-nb-people">
+            <p><%= recipe.number_of_people %> person</p>
+          </div>
+        </div>
+      </div>

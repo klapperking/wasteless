@@ -2,21 +2,16 @@
   <div>
     <%= pie_chart @my_pets, pie: true, colors: ["FF0C0D", "#FF4E10", "#FF8E15", "#FAB732", "#ABB333", "#68B34B"], width: "100%" %>
   </div>
-  <div>
+  <div class="my-3">
     <h3>Recommended Ingredients:</h3>
-      <% @ingredients.first(3).each do |ingredient| %>
-      <div class="ingredient-card">
-        <p id="ingredient-name"><%= ingredient.name %></p>
-        <p id="ingredient-qty">4</p>
-      </div>
+      <% @inventory.inventory_ingredients.first(3).each do |inventory_ingredient| %>
+        <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
       <% end %>
   </div>
-  <div>
-    <h3>Last Recipe Cooked:</h3>
-    <div class="recipe-card">
-        <h5>Pasta Bolognesa<%#= recipe.name %></h5>
-        <p> 4 ingredients<%#= recipe.ingredients.count %></p>
-        <p> 2 people</p>
+  <div class="my-5">
+    <div class="my-3">
+      <h3>Last Recipe Cooked:</h3>
+      <%= render partial: "shared/recipe_card", locals: { recipe: @recipe } %>
     </div>
   </div>
 </div>
