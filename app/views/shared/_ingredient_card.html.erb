@@ -7,7 +7,7 @@
       <p><%= inventory_ingredient.ingredient.name%></p>
     </div>
     <div id="ingredient-qty">
-      <p><%= inventory_ingredient.quantity %> <%= inventory_ingredient.ingredient.category.measuring_unit %></p>
+      <p><%= inventory_ingredient.format_float %> <%= inventory_ingredient.ingredient.category.measuring_unit %></p>
     </div>
   </div>
 </div>

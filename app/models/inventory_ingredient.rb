@@ -16,6 +16,10 @@ class InventoryIngredient < ApplicationRecord
   # validate the expirations date to be in the future
   validates_with InventoryIngredientValidator
 
+  def format_float
+    quantity % 1 == 0 ? quantity.to_i : quantity
+  end
+
   private
 
   def set_expiration_date
