@@ -37,7 +37,13 @@ category_ingredients_json['categories_and_ingredients'].each do |category|
     days_to_expiry: category['category_info']['days_to_expiry'],
     measuring_unit: category['category_info']['measuring_unit']
   }
-  Category.create!(category_attributes)
+
+  # attach icon to category from url
+  new_category = Category.new(category_attributes)
+  photo = URI.open(category['category_info']['icon_url'])
+  new_category.icon.attach(io: photo, filename: category['category_info']['name'], content_type: 'image/png')
+
+  new_category.save!
 
   # create each ingredient
   category['ingredients'].each do |ingredient|
