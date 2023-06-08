@@ -7,9 +7,9 @@ class User < ApplicationRecord
   after_validation :create_inventory, :create_shopping_list
 
   # relations
+  has_many :recipes, dependent: :nullify
   has_one :inventory, dependent: :destroy
   has_one :shopping_list, dependent: :destroy
-  has_many :recipes, dependent: :destroy
   has_many :to_be_cookeds, dependent: :destroy
 
   # validations
