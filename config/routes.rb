@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   resources :inventory_ingredients, only: %i[edit update destroy]
 
+  # routes for recipes
+  resources :recipes, only: [:index]
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
