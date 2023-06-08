@@ -4,7 +4,8 @@
       "category_info": {
         "name": "Fish and Seafood",
         "days_to_expiry": 4,
-        "measuring_unit": "g"
+        "measuring_unit": "g",
+        "icon_url": "https://cdn-icons-png.flaticon.com/512/2929/2929546.png"
       },
       "ingredients": [
         "Salmon",
@@ -23,7 +24,8 @@
       "category_info": {
         "name": "Meat",
         "days_to_expiry": 6,
-        "measuring_unit": "g"
+        "measuring_unit": "g",
+        "icon_url": "https://cdn-icons-png.flaticon.com/512/3143/3143643.png"
       },
       "ingredients": [
         "Chicken breast",
@@ -43,7 +45,8 @@
       "category_info": {
         "name": "Rice and Legumes",
         "days_to_expiry": 4,
-        "measuring_unit": "g"
+        "measuring_unit": "g",
+        "icon_url": "https://cdn-icons-png.flaticon.com/512/2095/2095652.png"
       },
       "ingredients": [
         "Rice",
@@ -62,7 +65,8 @@
       "category_info": {
         "name": "Charcuterie",
         "days_to_expiry": 180,
-        "measuring_unit": "g"
+        "measuring_unit": "g",
+        "icon_url": "https://cdn-icons-png.flaticon.com/512/3082/3082035.png"
       },
       "ingredients": [
         "Ham",
@@ -78,7 +82,8 @@
       "category_info": {
         "name": "Fruit",
         "days_to_expiry": 10,
-        "measuring_unit": "u."
+        "measuring_unit": "u.",
+        "icon_url": "https://cdn-icons-png.flaticon.com/512/3194/3194766.png"
       },
       "ingredients": [
         "Apple",
@@ -97,7 +102,8 @@
       "category_info": {
         "name": "Vegetables",
         "days_to_expiry": 20,
-        "measuring_unit": "u."
+        "measuring_unit": "u.",
+        "icon_url": "https://cdn-icons-png.flaticon.com/512/2153/2153788.png"
       },
       "ingredients": [
         "Carrot",
@@ -126,7 +132,8 @@
       "category_info": {
         "name": "Dairy",
         "days_to_expiry": 30,
-        "measuring_unit": "g"
+        "measuring_unit": "g",
+        "icon_url": "https://cdn-icons-png.flaticon.com/512/2674/2674505.png"
       },
       "ingredients": [
         "Butter",
@@ -141,7 +148,8 @@
       "category_info": {
         "name": "Liquids",
         "days_to_expiry": 30,
-        "measuring_unit": "ml"
+        "measuring_unit": "ml",
+        "icon_url": "https://cdn-icons-png.flaticon.com/512/3717/3717054.png"
       },
       "ingredients": [
         "Vegetable oil",
@@ -160,7 +168,8 @@
       "category_info": {
         "name": "Bread and baked goods",
         "days_to_expiry": 15,
-        "measuring_unit": "g"
+        "measuring_unit": "g",
+        "icon_url": "https://cdn-icons-png.flaticon.com/512/992/992747.png"
       },
       "ingredients": [
         "Yeast",
@@ -174,7 +183,8 @@
       "category_info": {
         "name": "Sauces",
         "days_to_expiry": 365,
-        "measuring_unit": "ml"
+        "measuring_unit": "ml",
+        "icon_url": "https://cdn-icons-png.flaticon.com/512/3082/3082018.png"
       },
       "ingredients": [
         "Lemon juice",
@@ -191,7 +201,8 @@
       "category_info": {
         "name": "Pasta",
         "days_to_expiry": 365,
-        "measuring_unit": "g"
+        "measuring_unit": "g",
+        "icon_url": "https://cdn-icons-png.flaticon.com/512/9126/9126280.png"
       },
       "ingredients": [
         "Spaghetti",
@@ -205,7 +216,8 @@
       "category_info": {
         "name": "Herbs",
         "days_to_expiry": 14,
-        "measuring_unit": "g"
+        "measuring_unit": "g",
+        "icon_url": "https://cdn-icons-png.flaticon.com/512/1329/1329083.png"
       },
       "ingredients": [
         "Parsley",
@@ -220,7 +232,8 @@
       "category_info": {
         "name": "condiments",
         "days_to_expiry": 50,
-        "measuring_unit": "g"
+        "measuring_unit": "g",
+        "icon_url": "https://cdn-icons-png.flaticon.com/512/2160/2160302.png"
       },
       "ingredients": [
         "Red Curry Paste",

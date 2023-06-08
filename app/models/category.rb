@@ -2,6 +2,8 @@ class Category < ApplicationRecord
   # relations
   has_many :ingredients, dependent: :destroy
 
+  has_one_attached :icon
+
   # validations
   validates :name, presence: true, uniqueness: true
 
