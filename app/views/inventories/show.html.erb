@@ -4,8 +4,8 @@
   <% @inventory.inventory_ingredients.sort_by(&:expiration_date).each do |inventory_ingredient| %>
     <% if inventory_ingredient.expiration_date > Date.today + 30 %>
       <div class="ingredient-card-edit">
-        <div class="green2">
-        <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
+        <div class="green2 ingredient-card">
+          <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
         </div>
         <div id="ingredient-edit">
           <%= link_to "#" do%>
