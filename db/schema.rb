@@ -116,10 +116,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_152346) do
 
   create_table "to_be_cookeds", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "recipes_id", null: false
+    t.bigint "recipe_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["recipes_id"], name: "index_to_be_cookeds_on_recipes_id"
+    t.index ["recipe_id"], name: "index_to_be_cookeds_on_recipe_id"
     t.index ["user_id"], name: "index_to_be_cookeds_on_user_id"
   end
 
@@ -150,6 +150,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_152346) do
   add_foreign_key "shopping_list_ingredients", "ingredients"
   add_foreign_key "shopping_list_ingredients", "shopping_lists"
   add_foreign_key "shopping_lists", "users"
-  add_foreign_key "to_be_cookeds", "recipes", column: "recipes_id"
+  add_foreign_key "to_be_cookeds", "recipes"
   add_foreign_key "to_be_cookeds", "users"
 end
