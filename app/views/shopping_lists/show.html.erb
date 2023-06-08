@@ -1,0 +1,42 @@
+<div class="container-sm">
+  <div class="my-4">
+    <h2>My Shopping List:</h2>
+  </div>
+    <% @categories.each do |category_name| %>
+      <div class="ingredient-card" id="category-card-bg">
+        <div id="ingredient-icon">
+          <i class="fa-regular fa-square mx-2"></i>
+        </div>
+        <div id="ingredient-name">
+          <%= category_name %>
+        </div>
+        <div id="ingredient-dropdown">
+          <i class="fa-solid fa-caret-down"></i>
+        </div>
+      </div>
+      <% @ingredients.each do |ingredient| %>
+        <% if ingredient.category.name == category_name  %>
+          <div class="my-2">
+            <div class="ingredient-card-edit">
+              <div class="ingredient-card" id="ingredient-card-bg">
+                <div id="ingredient-icon">
+                  <i class="fa-regular fa-square mx-2"></i>
+                </div>
+                <div id="ingredient-name">
+                  <p><%= ingredient.name%></p>
+                </div>
+                <div id="ingredient-qty">
+                  <p><%= @shoppinglist_ingredients.quantity %></p>
+                </div>
+              </div>
+              <div id="ingredient-edit">
+                <%= link_to "#" do%>
+                  <i class="fa-solid fa-pencil"></i>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+</div>
