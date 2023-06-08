@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :inventories, only: [:show] do
-    resources :inventory_ingredients, only: %i[new create]
+    resources :inventory_ingredients, only: %i[new create edit update destroy]
   end
+
+  resources :inventory_ingredients, only: %i[edit update destroy]
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

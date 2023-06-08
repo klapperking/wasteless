@@ -19,6 +19,25 @@ class InventoryIngredientsController < ApplicationController
     end
   end
 
+  def edit
+    @inventory_ingredient = InventoryIngredient.find(params[:id])
+    authorize @inventory_ingredient
+  end
+
+  def update
+    @inventory_ingredient = InventoryIngredient.find(params[:id])
+    authorize @inventory_ingredient
+    @inventory_ingredient.update(ingredient_params)
+    redirect_to inventory_path(@inventory_ingredient.inventory)
+  end
+
+  def destroy
+    @inventory_ingredient = InventoryIngredient.find(params[:id])
+    authorize @inventory_ingredient
+    @inventory_ingredient.destroy
+    redirect_to inventory_path(@inventory_ingredient.inventory), status: :see_other
+  end
+
   private
 
   def set_inventory

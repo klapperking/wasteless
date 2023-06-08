@@ -9,4 +9,12 @@ class InventoryIngredientPolicy < ApplicationPolicy
   def create?
     record.inventory.user == user
   end
+
+  def update?
+    record.inventory.user == user
+  end
+
+  def destroy?
+    record.inventory.user == user
+  end
 end
