@@ -44,3 +44,34 @@
     height: 100%;
   }
 }
+
+.ingredient-card-edit {
+  display: flex;
+  align-items: center;
+}
+
+#ingredient-edit {
+  width: 7%;
+  text-align: right;
+
+  a {
+    color: rgba(128, 128, 128, 0.4);
+  }
+}
+
+#ingredient-card-bg {
+  background-color: #E8EDD5;
+}
+
+#category-card-bg {
+  background-color: #64B6AC;
+  margin-top: 20px;
+}
+
+#ingredient-dropdown {
+  width: 20%;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: right;
+  margin-right: 5px;
+}
