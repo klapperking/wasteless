@@ -1,6 +1,8 @@
 class InventoryIngredient < ApplicationRecord
+  include ActiveModel::Validations
+
   # callbacks
-  after_validation :set_expiration_date
+  before_validation :set_expiration_date
 
   # relations
   belongs_to :ingredient
@@ -11,9 +13,12 @@ class InventoryIngredient < ApplicationRecord
   validates :inventory, presence: true
   validates :quantity, presence: true, numericality: true
 
+  # validate the expirations date to be in the future
+  validates_with InventoryIngredientValidator
+
   private
 
   def set_expiration_date
-    self.expiration_date = ingredient.expiry_date_from(Date.today)
+    self.expiration_date = ingredient.expiry_date_from(Date.today) unless expiration_date
   end
 end

@@ -1,4 +1,6 @@
 require 'json'
+require 'date'
+
 seed_resource_dir = "#{__dir__}/seed_resources/"
 
 puts "Cleaning Database..."
@@ -70,7 +72,6 @@ recipes_json['recipes'].each do |recipe|
 
   # create Ingredients for given Recipe
   recipe['recipe_ingredients'].each do |ingredient|
-    puts ingredient
     recipe_ingredient_attrs = {
       quantity: ingredient['quantity'],
       ingredient: Ingredient.find_by(name: ingredient['name']),
@@ -84,12 +85,25 @@ puts "---------------------------"
 
 puts "Populating Inventories..."
 # add 10 ingredients to each inventory with randomized quantity and expiry date;
+user_inventory_ingredients = JSON.parse(File.read("#{seed_resource_dir}/user_inventory_ingredients.json"))
 
-puts "Done"
-puts "---------------------------"
+user_inventory_ingredients['user_inventory_ingredients'].each do |user|
+  # get user inventory
+  for_user = User.find_by(email: user['user_email'])
+  inventory = Inventory.find_by(user: for_user)
 
-puts "Populating Shopping Lists..."
+  # for each ingredient for that inventory create an IngredientInventory entry
+  user['inventory_ingredients'].each do |ingredient|
+    inv_ingr_attributes = {
+      inventory:,
+      ingredient: Ingredient.find_by(name: ingredient['name']),
+      quantity: ingredient['quantity'],
+      expiration_date: Date.parse(ingredient['expiration_date'])
+    }
 
+    InventoryIngredient.create!(inv_ingr_attributes)
+  end
+end
 puts "Done"
 puts "---------------------------"
 
