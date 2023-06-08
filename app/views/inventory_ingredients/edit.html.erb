@@ -1,0 +1,13 @@
+<h1>Update your <%= @inventory_ingredient.ingredient.name.downcase %></h1>
+
+<%= simple_form_for [@inventory, @inventory_ingredient] do |f| %>
+  <% if @inventory_ingredient.new_record? %>
+    <%= f.input :ingredient_id, collection: Ingredient.all %>
+  <% end %>
+  <%= f.input :quantity %>
+  <%= f.submit %>
+<% end %>
+  <%= link_to "Delete the #{@inventory_ingredient.ingredient.name.downcase}" ,
+    inventory_ingredient_path(@inventory_ingredient),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>

@@ -1,3 +1,5 @@
+<h1>Add an ingredient</h1>
+
 <%= simple_form_for [@inventory, @inventory_ingredient] do |f| %>
   <%= f.input :ingredient_id, collection: Ingredient.all %>
   <%= f.input :quantity %>
