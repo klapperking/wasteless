@@ -1,7 +1,244 @@
 {
   "recipes": [
     {
-      "name": "Fettuci"
+      "name": "Fettuccine ai funghi",
+      "description": "This is a generic mushroom pasta recipe",
+      "photo": "https://www.themediterraneandish.com/wp-content/uploads/2021/04/mushroom-pasta-recipe-8-1024x1536.jpg",
+      "number_of_people": "2",
+      "recipe_ingredients": [
+        {
+          "name": "Fettuccine",
+          "quantity": 300
+        },
+        {
+          "name": "Mushroom",
+          "quantity": 3
+        },
+        {
+          "name": "Butter",
+          "quantity": 15
+        },
+        {
+          "name": "Garlic",
+          "quantity": 3
+        },
+        {
+          "name": "Onion",
+          "quantity": 1
+        },
+        {
+          "name": "Parsley",
+          "quantity": 20
+        }
+      ]
+    },
+    {
+      "name": "Cauliflower Thai Curry",
+      "description": "This thai curry is for cold days",
+      "photo": "https://kirbiecravings.com/wp-content/uploads/2018/01/cauliflower-thai-red-curry-221.jpg",
+      "number_of_people": "2",
+      "recipe_ingredients": [
+        {
+          "name": "Cauliflower",
+          "quantity": 1
+        },
+        {
+          "name": "Green beans",
+          "quantity": 20
+        },
+        {
+          "name": "Red Bell Pepper",
+          "quantity": 2
+        },
+        {
+          "name": "Garlic",
+          "quantity": 3
+        },
+        {
+          "name": "Cilantro",
+          "quantity": 30
+        }
+      ]
+    },
+    {
+      "name": "Pan Con Tomato",
+      "description": "Proper Catalan summer with this basic recipe",
+      "photo": "https://www.themediterraneandish.com/wp-content/uploads/2021/09/pan-con-tomate-recipe-8-315x315.jpg",
+      "number_of_people": "3",
+      "recipe_ingredients": [
+        {
+          "name": "Bread",
+          "quantity": 300
+        },
+        {
+          "name": "Tomato",
+          "quantity": 3
+        },
+        {
+          "name": "Olive oil",
+          "quantity": 30
+        },
+        {
+          "name": "Garlic",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "name": "Bruschetta",
+      "description": "Incredible italian summer dish",
+      "photo": "https://i2.wp.com/www.thegarlicdiaries.com/wp-content/uploads/2015/08/IMG_2849.jpg",
+      "number_of_people": "3",
+      "recipe_ingredients": [
+        {
+          "name": "Bread",
+          "quantity": 300
+        },
+        {
+          "name": "Tomato",
+          "quantity": 4
+        },
+        {
+          "name": "Olive oil",
+          "quantity": 30
+        },
+        {
+          "name": "Garlic",
+          "quantity": 4
+        },
+        {
+          "name": "Basil",
+          "quantity": 20
+        }
+      ]
+    },
+    {
+      "name": "Traditional Seafood Paella",
+      "description": "Incredible italian summer dish",
+      "photo": "https://spanishsabores.com/wp-content/uploads/2020/05/Seafood-Paella-1851-Blog.jpg",
+      "number_of_people": "3",
+      "recipe_ingredients": [
+        {
+          "name": "Olive oil",
+          "quantity": 80
+        },
+        {
+          "name": "Onion",
+          "quantity": 1
+        },
+        {
+          "name": "Garlic",
+          "quantity": 2
+        },
+        {
+          "name": "Tomato",
+          "quantity": 2
+        },
+        {
+          "name": "Squid",
+          "quantity": 300
+        },
+        {
+          "name": "Paprika Powder",
+          "quantity": 5
+        },
+        {
+          "name": "Saffron",
+          "quantity": 5
+        },
+        {
+          "name": "Rice",
+          "quantity": 380
+        },
+        {
+          "name": "White Wine",
+          "quantity": 240
+        },
+        {
+          "name": "Seafood Stock",
+          "quantity": 720
+        },
+        {
+          "name": "Prawn",
+          "quantity": 300
+        },
+        {
+          "name": "Mussel",
+          "quantity": 300
+        }
+      ]
+    },
+    {
+      "name": "Spaghetti Bolognese",
+      "description": "Traditional Bolognese Pasta",
+      "photo": "https://anitalianinmykitchen.com/wp-content/uploads/2019/09/bolognese-pict-1-of-1-1024x1536.jpg.webp",
+      "number_of_people": "6",
+      "recipe_ingredients": [
+        {
+          "name": "Spaghetti",
+          "quantity": 700
+        },
+        {
+          "name": "Carrot",
+          "quantity": 1
+        },
+        {
+          "name": "Celery",
+          "quantity": 1
+        },
+        {
+          "name": "Olive oil",
+          "quantity": 15
+        },
+        {
+          "name": "Onion",
+          "quantity": 1
+        },
+        {
+          "name": "minced beef",
+          "quantity": 300
+        },
+        {
+          "name": "minced pork",
+          "quantity": 300
+        },
+        {
+          "name": "Red Wine",
+          "quantity": 100
+        },
+        {
+          "name": "Tomato paste",
+          "quantity": 15
+        },
+        {
+          "name": "Tomato sauce",
+          "quantity": 300
+        },
+        {
+          "name": "Bay leaf",
+          "quantity": 2
+        },
+        {
+          "name": "Milk",
+          "quantity": 80
+        }
+      ]
+    },
+    {
+      "name": "Bocadillo de jamón",
+      "description": "Classic iberian ham sandwich",
+      "photo": "https://historiadeljamon.com/wp-content/uploads/2017/10/cropped-Bocadillo-jamon-iberico-museo-del-jamon-alcorcon.jpg",
+      "number_of_people": "1",
+      "recipe_ingredients": [
+        {
+          "name": "Bread",
+          "quantity": 150
+        },
+        {
+          "name": "Iberico",
+          "quantity": 20
+        }
+      ]
     }
   ]
 }

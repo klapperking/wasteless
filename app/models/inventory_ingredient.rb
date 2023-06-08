@@ -1,6 +1,6 @@
 class InventoryIngredient < ApplicationRecord
   # callbacks
-  # after_validation :set_expiration_date
+  after_validation :set_expiration_date
 
   # relations
   belongs_to :ingredient

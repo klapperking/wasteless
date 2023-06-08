@@ -5,6 +5,8 @@ class Recipe < ApplicationRecord
   has_many :to_be_cookeds, dependent: :nullify # When recipe deleted, don't delete from to be cooked
   has_many :ingredients, through: :recipe_ingredients
 
+  has_one_attached :photo
+
   # validations
   validates :user, presence: true
   validates :name, presence: true
