@@ -9,9 +9,9 @@
         <div id="removed-inventory">
           <h5>Removed from the inventory</h5>
         </div>
-        <div class="ingredients-list-to-removed">
+        <div class="ingredients-list-to">
           <% @recipe.ingredients.each do |ingredient| %>
-            <% if @ingredients.find(ingredient.id) %>
+            <% if @ingredients.include?(ingredient.id) %>
               <ul>
                 <li><%= ingredient.name %></li>
               </ul>
@@ -20,6 +20,15 @@
         </div>
         <div id="added-shopping-list">
           <h5>Added to the shopping list</h5>
+        </div>
+        <div class="ingredients-list-to">
+          <% @recipe.ingredients.each do |ingredient| %>
+            <% if @ingredients.include?(ingredient.id) == false %>
+              <ul>
+                <li><%= ingredient.name %></li>
+              </ul>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
