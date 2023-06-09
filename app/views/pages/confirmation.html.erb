@@ -1,0 +1,27 @@
+<div class="container-sm">
+  <div class= "m-3">
+    <%= render partial: "shared/recipe_card", locals: { recipe: @recipe } %>
+    <i class="fa-solid fa-check" id="check-icon"></i>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="update-ingredients-inventory-card">
+      <div class="container-sm">
+        <div id="removed-inventory">
+          <h5>Removed from the inventory</h5>
+        </div>
+        <div class="ingredients-list-to-removed">
+          <% @recipe.ingredients.each do |ingredient| %>
+            <% if @ingredients.find(ingredient.id) %>
+              <ul>
+                <li><%= ingredient.name %></li>
+              </ul>
+            <% end %>
+          <% end %>
+        </div>
+        <div id="added-shopping-list">
+          <h5>Added to the shopping list</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

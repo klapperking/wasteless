@@ -5,7 +5,9 @@
   <div class="my-3">
     <h3>Recommended Ingredients:</h3>
       <% @inventory.inventory_ingredients.first(3).each do |inventory_ingredient| %>
-        <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
+        <div class="red1">
+          <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
+        </div>
       <% end %>
   </div>
   <div class="my-5">
