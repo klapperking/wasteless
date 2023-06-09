@@ -113,4 +113,26 @@ end
 puts "Done"
 puts "---------------------------"
 
+puts "Faking Shopping List..."
+user_shopping_list_ingredients = JSON.parse(File.read("#{seed_resource_dir}/user_shopping_list_ingredients.json"))
+
+user_shopping_list_ingredients['user_shopping_list_ingredients'].each do |user|
+  # get user inventory
+  for_user = User.find_by(email: user['user_email'])
+  shopping_list = ShoppingList.find_by(user: for_user)
+
+  # for each ingredient for that inventory create an IngredientInventory entry
+  user['shopping_list_ingredients'].each do |ingredient|
+    sl_ingr_attributes = {
+      shopping_list:,
+      ingredient: Ingredient.find_by(name: ingredient['name']),
+      quantity: ingredient['quantity']
+    }
+
+    ShoppingListIngredient.create!(sl_ingr_attributes)
+  end
+end
+puts "Done"
+puts "---------------------------"
+
 puts "Finished seeding"
