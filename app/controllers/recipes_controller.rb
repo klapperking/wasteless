@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
     # If called with ingredient query, find best match for ingredient ids and order recipes by matchcount
     if params.key?(:ingredients)
       # Example query /?query={ingredient_id}-{quantity}+... e.g.: /?query=1-2
-      @ingredients = params[:ingredients].split('-').map { |ingr_id| Ingredient.find(ingr_id) }
+      @ingredients = params[:ingredients].split(',').map { |ingr_id| Ingredient.find(ingr_id) }
 
       # create recipe order hash { recipe_id: match_count }
       @match_order = {}
