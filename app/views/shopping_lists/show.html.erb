@@ -32,11 +32,9 @@
                 <div id="ingredient-name">
                   <p><%= ingredient.name%></p>
                 </div>
-                <% @shoppinglist_ingredients.each do |sr_ingr| %>
-                  <div id="ingredient-qty">
-                    <p><%= sr_ingr.quantity %></p>
-                  </div>
-                <% end %>
+                <div id="ingredient-qty">
+                  <p><%= @shoppinglist_ingredients.find_by(ingredient:).quantity %></p>
+                </div>
               </div>
               <div id="ingredient-edit">
                 <%= link_to "#" do%>
