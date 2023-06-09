@@ -66,7 +66,7 @@ recipes_json['recipes'].each do |recipe|
     name: recipe['name'],
     description: recipe['description'],
     number_of_people: recipe['number_of_people'],
-    user: User.all.sample
+    user: User.first
   }
 
   # attach photo to recipe from url
