@@ -1,7 +1,7 @@
 class ShoppingListsController < ApplicationController
   def show
     # get shopping list of current user
-    @shopping_list = policy_scope(ShoppingList)
+    @shopping_list = ShoppingList.find(params[:id])
 
     # get all the ingredients of that shopping list
     @shoppinglist_ingredients = @shopping_list.shopping_list_ingredients
