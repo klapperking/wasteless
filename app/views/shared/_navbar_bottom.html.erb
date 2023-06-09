@@ -2,13 +2,21 @@
   <%= link_to root_path do %>
     <i class="fa-solid fa-house"></i>
   <% end %>
-  <%= link_to inventory_path(current_user) do %>
+  <% if user_signed_in? %>
+    <%= link_to inventory_path(current_user) do %>
+      <i class="fa-solid fa-box-archive"></i>
+    <% end %>
+  <% else %>
     <i class="fa-solid fa-box-archive"></i>
   <% end %>
   <%= link_to recipes_path() do %>
     <i class="fa-solid fa-utensils"></i>
   <% end %>
-  <%= link_to shopping_list_path(current_user) do %>
+  <% if user_signed_in? %>
+    <%= link_to shopping_list_path(current_user) do %>
+      <i class="fa-solid fa-list-check"></i>
+    <% end %>
+  <% else %>
     <i class="fa-solid fa-list-check"></i>
   <% end %>
 </div>

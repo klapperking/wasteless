@@ -1,7 +1,7 @@
 class InventoriesController < ApplicationController
-
   def show
-    @inventory = Inventory.find(params[:id])
+    # get the inventory for current-user using policy
+    @inventory = policy_scope(Inventory)
     authorize @inventory
   end
 end

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   # routes for recipes
   resources :recipes, only: [:index]
-  
+
   # routes for shopping list
   resources :shopping_lists, only: [:show]
 
