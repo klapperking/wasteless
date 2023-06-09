@@ -32,3 +32,7 @@ h2 {
   background-color: $red1;
   border-radius: 5px;
 }
+
+.ingredient-card[data-selected="true"] {
+  border: 2px solid black;
+}
