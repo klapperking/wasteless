@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
 
   def confirmation
-    @recipe = Recipe.first
+    @recipe = Recipe.find(6)
     @inventory = Inventory.find(current_user.id)
     @ingredients = []
     @inventory.inventory_ingredients.each do |ingredient|
