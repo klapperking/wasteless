@@ -6,4 +6,7 @@
         <%= render partial: "shared/recipe_card", locals: { recipe: recipe } %>
       </div>
   <% end %>
+  <div class="bottom-btn">
+    <%= link_to "Let's cook it!", recipe_confirmation_path %>
+  </div>
 </div>
