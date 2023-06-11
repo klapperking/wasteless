@@ -1,4 +1,10 @@
 class Ingredient < ApplicationRecord
+  include AlgoliaSearch
+
+  algoliasearch do
+    attributes :name
+  end
+
   # relations
   belongs_to :category
   has_many :inventory_ingredients, dependent: :destroy

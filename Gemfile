@@ -85,3 +85,6 @@ gem "cloudinary"
 
 # Gem for chart with JS
 gem 'chartkick'
+
+# algolia search for nice search formating
+gem 'algoliasearch-rails'

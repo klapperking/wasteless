@@ -39,4 +39,7 @@
 # Ignore Mac and Linux file system files
 *.swp
 .DS_Store
-.env*
+
+# Ignore package log files
+yarn-error.log
+wget-log

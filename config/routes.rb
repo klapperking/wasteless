@@ -15,8 +15,6 @@ Rails.application.routes.draw do
   # routes for shopping list
   resources :shopping_lists, only: [:show]
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # api endpoint for algolia-search searhc API-Key
+  get 'api/environment_variables', to: 'apis#environment_variables'
 end

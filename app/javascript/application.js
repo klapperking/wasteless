@@ -4,3 +4,5 @@ import "./controllers"
 import "bootstrap"
 
 //= require_tree .
+
+//= require algolia/v3/algoliasearch.min
