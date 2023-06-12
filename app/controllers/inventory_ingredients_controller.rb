@@ -1,5 +1,4 @@
 class InventoryIngredientsController < ApplicationController
-
   before_action :set_inventory, only: %i[new create]
 
   def new
@@ -36,6 +35,32 @@ class InventoryIngredientsController < ApplicationController
     authorize @inventory_ingredient
     @inventory_ingredient.destroy
     redirect_to inventory_path(@inventory_ingredient.inventory), status: :see_other
+  end
+
+  def modify
+    @inventory = Inventory.find_by(user: current_user)
+    @shopping_list = ShoppingList.find_by(user: current_user)
+    ingredients = params["_json"]
+    ids = @inventory.inventory_ingredients.pluck(:ingredient_id)
+    ingredients.each do |ingredient|
+      if ids.include?(ingredient[:ingredient_id].to_i)
+        @inventory_ingredient = @inventory.inventory_ingredients.find_by(ingredient_id: ingredient[:ingredient_id])
+        @inventory_ingredient.update!(quantity: ingredient[:ingredient_qty])
+        @shopping_list_ingredient = @shopping_list.shopping_list_ingredients.find_by(ingredient_id: ingredient[:ingredient_id])
+        @shopping_list_ingredient.destroy
+      else
+        InventoryIngredient.create!(inventory_id: @inventory.id, ingredient_id: ingredient[:ingredient_id], quantity: ingredient[:ingredient_qty])
+        @shopping_list_ingredient = @shopping_list.shopping_list_ingredients.find_by(ingredient_id: ingredient[:ingredient_id])
+        @shopping_list_ingredient.destroy
+      end
+    end
+    authorize @inventory_ingredient
+    respond_to do |format|
+      format.json { render json: { status: 'ok', id: @inventory.id } }
+    end
+    # respond_to do |format|
+    #   format.html { redirect_to inventory_path(@inventory) }
+    # end
   end
 
   private
