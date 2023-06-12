@@ -1,9 +1,10 @@
 <div class="container-sm my-2">
-  <div>
-    <h1>My recipes</h1>
-  </div>
 
+  <!-- match-order should eventually be rewritten since its bad for code-reading -->
   <% if @match_order %>
+    <div>
+      <h1>Select a recipe!</h1>
+    </div>
     <% @match_order.each do |recipe, count| %>
       <div class= "m-3 regular-link">
         <%= link_to(recipe_path(recipe)) do %>
@@ -12,16 +13,15 @@
       </div>
     <% end %>
   <% else %>
+    <div>
+      <h1>My recipes:</h1>
+    </div>
     <% @recipes.each do |recipe| %>
-        <div class= "m-3">
+        <div class= "m-3 regular-link">
           <%= link_to(recipe_path(recipe)) do %>
             <%= render partial: "shared/recipe_card", locals: { recipe: recipe } %>
           <% end %>
         </div>
     <% end %>
   <% end %>
-    <div class="bottom-btn">
-      <%= link_to "Let's cook it!", recipe_confirmation_path %>
-    </div>
-  </div>
 </div>

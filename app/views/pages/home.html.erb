@@ -45,7 +45,7 @@
       <% end %>
   </div>
   <div class="my-5">
-    <div class="my-3">
+    <div class="my-3 regular-link">
       <h3>Last Recipe Cooked:</h3>
       <%= link_to(recipe_path(@recipe)) do %>
         <%= render partial: "shared/recipe_card", locals: { recipe: @recipe } %>
