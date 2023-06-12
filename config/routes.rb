@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :inventory_ingredients, only: %i[edit update destroy]
 
   # routes for recipes
-  resources :recipes, only: [:index]
+  resources :recipes, only: %i[index show]
 
   # routes for shopping list
   resources :shopping_lists, only: [:show]
