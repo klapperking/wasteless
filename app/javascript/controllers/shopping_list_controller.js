@@ -3,7 +3,6 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="shopping-list"
 export default class extends Controller {
   arrayIngredients = []
-  static target = "ingredient"
   connect() {
   }
 
@@ -43,6 +42,7 @@ export default class extends Controller {
   dropdown(event) {
     const categoryCard = event.currentTarget
     console.log(categoryCard);
-    console.log(this.ingredientTarget)
+    const ingredientCard = categoryCard.nextElementSibling
+    ingredientCard.classList.toggle("d-none")
   }
 }

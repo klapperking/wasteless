@@ -21,30 +21,32 @@
           <i class="fa-solid fa-caret-down"></i>
         </div>
       </div>
-      <% @ingredients.each do |ingredient| %>
-        <% if ingredient.category.name == category_name  %>
-          <div class="my-2" data-shopping-list-target="#ingredient">
-            <div class="ingredient-card-edit">
-              <div class="ingredient-card" id="ingredient-card-bg">
-                <div class="ingredient-icon">
-                  <i class="fa-regular fa-square mx-2" data-action="click->shopping-list#select" data-selected="false" data-ingredient-id= "<%= ingredient.id%>" data-ingredient-qty= "<%= @shoppinglist_ingredients.find_by(ingredient:).quantity %>"></i>
+      <div>
+        <% @ingredients.each do |ingredient| %>
+          <% if ingredient.category.name == category_name  %>
+            <div class="my-2">
+              <div class="ingredient-card-edit">
+                <div class="ingredient-card" id="ingredient-card-bg">
+                  <div class="ingredient-icon">
+                    <i class="fa-regular fa-square mx-2" data-action="click->shopping-list#select" data-selected="false" data-ingredient-id= "<%= ingredient.id%>" data-ingredient-qty= "<%= @shoppinglist_ingredients.find_by(ingredient:).quantity %>"></i>
+                  </div>
+                  <div class="ingredient-name">
+                    <p><%= ingredient.name%></p>
+                  </div>
+                  <div id="ingredient-qty">
+                    <p><%= @shoppinglist_ingredients.find_by(ingredient:).quantity %></p>
+                  </div>
                 </div>
-                <div class="ingredient-name">
-                  <p><%= ingredient.name%></p>
+                <div id="ingredient-edit">
+                  <%= link_to "#" do%>
+                    <i class="fa-solid fa-pencil"></i>
+                  <% end %>
                 </div>
-                <div id="ingredient-qty">
-                  <p><%= @shoppinglist_ingredients.find_by(ingredient:).quantity %></p>
-                </div>
-              </div>
-              <div id="ingredient-edit">
-                <%= link_to "#" do%>
-                  <i class="fa-solid fa-pencil"></i>
-                <% end %>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     <% end %>
   </div>
 </div>
