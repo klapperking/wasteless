@@ -1,6 +1,12 @@
 <div class="container-sm">
-  <h2><strong>Pick your ingredients!</strong></h2>
-
+  <div class="title-add">
+    <h2><strong>Pick your ingredients!</strong></h2>
+    <div id="add-btn">
+      <%= link_to new_inventory_inventory_ingredient_path(@inventory) do %>
+        <i class="fa-solid fa-plus"></i>
+      <% end %>
+    </div>
+  </div>
   <div data-controller="selection" >
     <% @inventory.inventory_ingredients.sort_by(&:expiration_date).each do |inventory_ingredient| %>
       <% if inventory_ingredient.expiration_date > Date.today + 30 %>
@@ -9,7 +15,7 @@
             <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
           </div>
           <div id="ingredient-edit">
-            <%= link_to "#" do%>
+            <%= link_to  edit_inventory_ingredient_path(inventory_ingredient) do%>
             <i class="fa-solid fa-pencil"></i>
             <% end %>
           </div>
@@ -20,7 +26,7 @@
             <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
           </div>
           <div id="ingredient-edit">
-            <%= link_to "#" do%>
+            <%= link_to edit_inventory_ingredient_path(inventory_ingredient) do%>
             <i class="fa-solid fa-pencil"></i>
             <% end %>
           </div>
@@ -31,7 +37,7 @@
             <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
           </div>
           <div id="ingredient-edit">
-            <%= link_to "#" do%>
+            <%= link_to edit_inventory_ingredient_path(inventory_ingredient) do%>
             <i class="fa-solid fa-pencil"></i>
             <% end %>
           </div>
@@ -42,7 +48,7 @@
             <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
           </div>
           <div id="ingredient-edit">
-            <%= link_to "#" do%>
+            <%= link_to edit_inventory_ingredient_path(inventory_ingredient) do%>
             <i class="fa-solid fa-pencil"></i>
             <% end %>
           </div>
@@ -53,7 +59,7 @@
             <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
           </div>
           <div id="ingredient-edit">
-            <%= link_to "#" do%>
+            <%= link_to edit_inventory_ingredient_path(inventory_ingredient) do%>
             <i class="fa-solid fa-pencil"></i>
             <% end %>
           </div>
@@ -64,13 +70,13 @@
             <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
           </div>
           <div id="ingredient-edit">
-            <%= link_to "#" do%>
+            <%= link_to edit_inventory_ingredient_path(inventory_ingredient) do%>
             <i class="fa-solid fa-pencil"></i>
             <% end %>
           </div>
         </div>
       <% end %>
     <% end %>
-    <button class="bottom-btn" data-action="click->selection#submit"> "Get me recipes!" </button>
+    <button class="bottom-btn" data-action="click->selection#submit"> Get me recipes! </button>
   </div>
 </div>
