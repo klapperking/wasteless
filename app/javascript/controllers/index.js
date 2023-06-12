@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import SelectionController from "./selection_controller"
 application.register("selection", SelectionController)
+
+import ShoppingListController from "./shopping_list_controller"
+application.register("shopping-list", ShoppingListController)

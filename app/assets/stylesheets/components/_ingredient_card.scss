@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-#ingredient-name {
+.ingredient-name {
   font-weight: bold;
   font-size: 20px;
   width: 50%;
@@ -29,7 +29,7 @@
   }
 }
 
-#ingredient-icon {
+.ingredient-icon {
   width: 20%;
   font-weight: bold;
   font-size: 20px;
@@ -61,11 +61,13 @@
 
 #ingredient-card-bg {
   background-color: #E8EDD5;
+  border-radius: 5px;
 }
 
 #category-card-bg {
   background-color: #64B6AC;
   margin-top: 20px;
+  border-radius: 5px;
 }
 
 #ingredient-dropdown {

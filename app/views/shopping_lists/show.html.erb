@@ -9,12 +9,12 @@
       <% end %>
     </div>
   </div>
+  <div data-controller="shopping-list">
     <% @categories.each do |category_name| %>
-      <div class="ingredient-card" id="category-card-bg">
-        <div id="ingredient-icon">
-          <i class="fa-regular fa-square mx-2"></i>
+      <div class="ingredient-card" id="category-card-bg" data-action="click->shopping-list#dropdown">
+        <div class="ingredient-icon" >
         </div>
-        <div id="ingredient-name">
+        <div class="ingredient-name">
           <%= category_name %>
         </div>
         <div id="ingredient-dropdown">
@@ -23,13 +23,13 @@
       </div>
       <% @ingredients.each do |ingredient| %>
         <% if ingredient.category.name == category_name  %>
-          <div class="my-2">
+          <div class="my-2" data-shopping-list-target="#ingredient">
             <div class="ingredient-card-edit">
               <div class="ingredient-card" id="ingredient-card-bg">
-                <div id="ingredient-icon">
-                  <i class="fa-regular fa-square mx-2"></i>
+                <div class="ingredient-icon">
+                  <i class="fa-regular fa-square mx-2" data-action="click->shopping-list#select" data-selected="false" data-ingredient-id= "<%= ingredient.id%>" data-ingredient-qty= "<%= @shoppinglist_ingredients.find_by(ingredient:).quantity %>"></i>
                 </div>
-                <div id="ingredient-name">
+                <div class="ingredient-name">
                   <p><%= ingredient.name%></p>
                 </div>
                 <div id="ingredient-qty">
@@ -46,4 +46,5 @@
         <% end %>
       <% end %>
     <% end %>
+  </div>
 </div>
