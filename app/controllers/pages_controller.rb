@@ -4,7 +4,13 @@ class PagesController < ApplicationController
   def home
     @inventory = Inventory.find(current_user.id)
     @recipe = Recipe.last
-    @my_pets = { "Less than 2 days" => 12, "2 - 4 days" => 7, "5 - 7 days" => 5, "1 - 2 weeks" => 8, "2 - 4 weeks" => 13, "More than a month" => 6 }
+    @ingredients = @inventory.inventory_ingredients
+    @my_ingredients = { "Less than 2 days" => @ingredients.select { |ingredient| ingredient.expiration_date <= Date.today + 2}.count,
+     "2 - 4 days" => @ingredients.select { |ingredient| ingredient.expiration_date > Date.today + 2 && ingredient.expiration_date <= Date.today + 4}.count,
+     "5 - 7 days" => @ingredients.select { |ingredient| ingredient.expiration_date > Date.today + 4 && ingredient.expiration_date <= Date.today + 7}.count,
+     "1 - 2 weeks" => @ingredients.select { |ingredient| ingredient.expiration_date > Date.today + 7 && ingredient.expiration_date <= Date.today + 14}.count,
+     "2 - 4 weeks" => @ingredients.select { |ingredient| ingredient.expiration_date > Date.today + 14 && ingredient.expiration_date <= Date.today + 30}.count,
+     "More than a month" => @ingredients.select { |ingredient| ingredient.expiration_date > Date.today + 30}.count }
   end
 
   def confirmation
