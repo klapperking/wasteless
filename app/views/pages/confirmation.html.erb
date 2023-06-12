@@ -10,24 +10,20 @@
           <h5>Removed from the inventory</h5>
         </div>
         <div class="ingredients-list-to">
-          <% @recipe.ingredients.each do |ingredient| %>
-            <% if @ingredients.include?(ingredient.id) %>
-              <ul>
-                <li><%= ingredient.name %></li>
-              </ul>
-            <% end %>
+          <% @inventory_ingredients.each do |ingredient, quantity| %>
+            <ul>
+              <li><%= ingredient.name %>; <%= quantity %></li>
+            </ul>
           <% end %>
         </div>
         <div id="added-shopping-list">
           <h5>Added to the shopping list</h5>
         </div>
         <div class="ingredients-list-to">
-          <% @recipe.ingredients.each do |ingredient| %>
-            <% if @ingredients.include?(ingredient.id) == false %>
-              <ul>
-                <li><%= ingredient.name %></li>
-              </ul>
-            <% end %>
+          <% @shopping_list_ingredients.each do |ingredient, quantity| %>
+            <ul>
+              <li><%= ingredient.name %>; <%= quantity %></li>
+            </ul>
           <% end %>
         </div>
       </div>

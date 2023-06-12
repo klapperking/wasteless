@@ -7,4 +7,9 @@
     <%= @recipe.name %>
     <%= @recipe.description %>
   </div>
+
+  <div class="add-to-recipe-btn">
+    <%= link_to("Add to shopping list", add_recipe_to_list_path(@shopping_list, @recipe),
+      data: { turbo_method: :post }) %>
+  </div>
 </div>

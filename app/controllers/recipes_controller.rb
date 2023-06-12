@@ -15,6 +15,9 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+
+    @shopping_list = ShoppingList.find_by(user: current_user)
+
     authorize @recipe
   end
 
