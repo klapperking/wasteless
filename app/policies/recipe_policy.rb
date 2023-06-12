@@ -14,7 +14,7 @@ class RecipePolicy < ApplicationPolicy
     record.user == user
   end
 
-  def add_recipe?
-    true
+  def add_from_recipe?
+    record.user == user
   end
 end
