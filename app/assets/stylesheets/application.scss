@@ -12,7 +12,12 @@
 @import "pages/index";
 @import "inventories/index";
 @import "shopping_lists/show";
+@import "recipes/index";
 
 body {
   padding-bottom: 70px;
+}
+
+a {
+  text-decoration: none;
 }
