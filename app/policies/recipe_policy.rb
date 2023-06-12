@@ -9,4 +9,12 @@ class RecipePolicy < ApplicationPolicy
   def index?
     true
   end
+
+  def show?
+    record.user == user
+  end
+
+  def add_from_recipe?
+    record.user == user
+  end
 end

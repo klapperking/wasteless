@@ -1,0 +1,15 @@
+<div class="page-container">
+  <div class="heading">
+    <h1>This is a show page</h1>
+  </div>
+
+  <div class="recipe-info">
+    <%= @recipe.name %>
+    <%= @recipe.description %>
+  </div>
+
+  <div class="add-to-recipe-btn">
+    <%= link_to("Add to shopping list", add_recipe_to_list_path(@shopping_list, @recipe),
+      data: { turbo_method: :post }) %>
+  </div>
+</div>
