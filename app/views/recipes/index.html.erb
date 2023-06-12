@@ -1,20 +1,27 @@
 <div class="container-sm my-2">
-  <h1>My recipes</h1>
+  <div>
+    <h1>My recipes</h1>
+  </div>
 
-<% if @match_order %>
-  <% @match_order.each do |recipe, count| %>
-    <div class= "m-3">
-      <%= render partial: "shared/recipe_card", locals: { recipe: recipe } %>
-    </div>
-  <% end %>
-<% else %>
-  <% @recipes.each do |recipe| %>
-      <div class= "m-3">
-        <%= render partial: "shared/recipe_card", locals: { recipe: recipe } %>
+  <% if @match_order %>
+    <% @match_order.each do |recipe, count| %>
+      <div class= "m-3 regular-link">
+        <%= link_to(recipe_path(recipe)) do %>
+          <%= render partial: "shared/recipe_card", locals: { recipe: recipe } %>
+        <% end %>
       </div>
+    <% end %>
+  <% else %>
+    <% @recipes.each do |recipe| %>
+        <div class= "m-3">
+          <%= link_to(recipe_path(recipe)) do %>
+            <%= render partial: "shared/recipe_card", locals: { recipe: recipe } %>
+          <% end %>
+        </div>
+    <% end %>
   <% end %>
-<% end %>
-  <div class="bottom-btn">
-    <%= link_to "Let's cook it!", recipe_confirmation_path %>
+    <div class="bottom-btn">
+      <%= link_to "Let's cook it!", recipe_confirmation_path %>
+    </div>
   </div>
 </div>

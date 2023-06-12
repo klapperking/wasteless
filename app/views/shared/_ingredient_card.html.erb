@@ -1,7 +1,11 @@
 <div class="my-2 d-flex flex-grow-1">
   <div class="ingredient-card">
-    <div class="ingredient-icon">
-      <%# <%= image_tag "alert_icon.ico" %>
+    <div id="ingredient-icon">
+    <% if inventory_ingredient.expiration_date <= Date.today + 2 %>
+      <%= image_tag "alert_icon.ico" %>
+    <% else %>
+      <%= cl_image_tag inventory_ingredient.ingredient.category.icon.key %>
+    <% end %>
     </div>
     <div class="ingredient-name">
       <p><%= inventory_ingredient.ingredient.name%></p>

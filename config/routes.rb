@@ -11,13 +11,12 @@ Rails.application.routes.draw do
   resources :inventory_ingredients, only: %i[edit update destroy]
 
   # routes for recipes
-  resources :recipes, only: [:index]
+  resources :recipes, only: %i[index show]
 
   # routes for shopping list
   resources :shopping_lists, only: [:show]
+  post 'shopping_lists/:shopping_list_id/add_recipe/:id', to: 'shopping_lists#add_from_recipe', as: 'add_recipe_to_list'
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # routes for adding a recipe to shopping list
+  resources :shopping_list_ingredients, only: %i[create]
 end
