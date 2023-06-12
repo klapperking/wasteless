@@ -16,7 +16,7 @@ export default class extends Controller {
       checkbox.dataset.selected = "false"
       this.arrayIngredients = this.arrayIngredients
       this.arrayIngredients.forEach(hash => {
-        console.log(this.arrayIngredients[hash])
+        // console.log(this.arrayIngredients[hash])
         if (hash["ingredient_id"] == ingredientId) {
           // console.log(ingredientId, hash["ingredient_id"]);
           const index = this.arrayIngredients.indexOf(hash)
@@ -36,7 +36,33 @@ export default class extends Controller {
     }
     // this.element.dataset.selected = "true"
     // console.log(this.element.dataset.selected)
-    console.log(this.arrayIngredients)
+    // console.log(this.arrayIngredients)
+  }
+
+  submit() {
+    // console.log(this.arrayIngredients);
+    // console.log(event.currentTarget);
+    const get_token = document.querySelector('meta[name="csrf-token"]').content
+    console.log(get_token);
+    const url = '/shopping-list/done'
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': get_token
+        },
+        body: JSON.stringify(this.arrayIngredients),
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.status == 'ok') {
+          window.location.href =`/inventories/${data.id}`
+        }
+        else {
+          console.log(data.status);
+        }
+      })
   }
 
   dropdown(event) {

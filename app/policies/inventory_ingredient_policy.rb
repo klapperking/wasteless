@@ -17,4 +17,9 @@ class InventoryIngredientPolicy < ApplicationPolicy
   def destroy?
     record.inventory.user == user
   end
+
+  def modify?
+    true
+  end
+
 end
