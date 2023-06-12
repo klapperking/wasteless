@@ -23,8 +23,7 @@ class ShoppingListsController < ApplicationController
 
   def add_recipe
     @recipe = Recipe.find(recipe_params[:id])
-
-    @recipe_ingredients = RecipeIngredient.where(recipe: @recipe) # TODO: Recipe doesn't have a user attached right now
+    @recipe_ingredients = RecipeIngredient.where(recipe: @recipe)
 
     # for each ingredient find, if it can be found in inventory - substract quantities
     # create a shoppinglist_ingredient of difference; maintain amount used and amount necessary
@@ -66,7 +65,7 @@ class ShoppingListsController < ApplicationController
     # shopping_list
     to_add_to_shopping_list.each do |ingredient_id, quantity|
       # if entry for ingredient exists, update it with quantity
-      existing_entry = ShoppingListIngredient.find(ingredient_id:, shopping_list: ShoppingList.find_by(user: current_user))
+      existing_entry = ShoppingListIngredient.find_by(ingredient_id:, shopping_list: ShoppingList.find_by(user: current_user))
       if existing_entry
         existing_entry.update!(quantity: existing_entry.quantity + quantity)
       # if doesnt exist create it

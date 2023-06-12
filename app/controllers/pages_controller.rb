@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: [ :home ]
+  before_action :confirmation_params, only: [:confirmation]
 
   def home
     @inventory = Inventory.find(current_user.id)
@@ -20,8 +21,8 @@ class PagesController < ApplicationController
     # get inventory_ingredients that were updated from params
     if params.key?(:inventory)
       inventory_params = params[:inventory]
-      inventory_params.to_h.transform_keys! { |ing_id| Ingredient.find(ing_id) }
-      @inventory_ingredients = inventory_params
+      # raise
+      @inventory_ingredients = inventory_params.to_h.transform_keys! { |ing_id| Ingredient.find(ing_id) }
     else
       @inventory_ingredients = {}
     end
@@ -29,10 +30,15 @@ class PagesController < ApplicationController
     # get shopping_list_ingredirents that were added
     if params.key?(:shopping_list)
       shopping_list_params = params[:shopping_list]
-      shopping_list_params.transform_keys! { |ing_id| Ingredient.find(ing_id) }
-      @shopping_list_ingredients = shopping_list_params
+      @shopping_list_ingredients = shopping_list_params.transform_keys! { |ing_id| Ingredient.find(ing_id) }
     else
       @shopping_list_ingredients = {}
     end
+  end
+
+  private
+
+  def confirmation_params
+    params.permit!
   end
 end
