@@ -12,10 +12,14 @@ class ShoppingListsController < ApplicationController
     # get all categories for each of the referenced ingredients
     @categories = []
 
+
     @shoppinglist_ingredients.each do |shop_ingredient|
-      category_name = shop_ingredient.ingredient.category.name
-      @categories.push(category_name) unless @categories.include?(category_name)
+      category = shop_ingredient.ingredient.category
+      @categories.push(category) unless @categories.include?(category)
     end
+
+    @shoppinglist_ingredient = ShoppingListIngredient.new
+    @shoppinglist_ingredient.shopping_list = @shopping_list
 
     # possibly missing auth for other view-vars?
     authorize @shopping_list
@@ -47,6 +51,9 @@ class ShoppingListsController < ApplicationController
         shopping_list: @to_add_to_shopping_list
       )
     )
+  end
+
+  def create
   end
 
   private

@@ -2,22 +2,33 @@
 
   <!-- match-order should eventually be rewritten since its bad for code-reading -->
   <% if @match_order %>
-    <div>
-      <h1>Select a recipe!</h1>
+    <div class="banner-top">
+      <div>
+        <h1>Select a recipe!</h1>
+      </div>
     </div>
     <% @match_order.each do |recipe, count| %>
-      <div class= "m-3 regular-link">
+      <div class= "my-3 regular-link">
         <%= link_to(recipe_path(recipe)) do %>
           <%= render partial: "shared/recipe_card", locals: { recipe: recipe } %>
         <% end %>
       </div>
     <% end %>
   <% else %>
-    <div>
-      <h1>My recipes:</h1>
+    <div class="banner-top">
+      <div class="details-banner">
+        <div>
+          <h1>My recipes:</h1>
+        </div>
+        <div id="add-btn">
+          <%= link_to "#" do %>
+            <i class="fa-solid fa-plus"></i>
+          <% end %>
+        </div>
+      </div>
     </div>
     <% @recipes.each do |recipe| %>
-        <div class= "m-3 regular-link">
+        <div class= "my-3 regular-link">
           <%= link_to(recipe_path(recipe)) do %>
             <%= render partial: "shared/recipe_card", locals: { recipe: recipe } %>
           <% end %>

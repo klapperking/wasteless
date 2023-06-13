@@ -10,10 +10,10 @@ export default class extends Controller {
     const card = event.currentTarget
     const clicked = card.dataset.selected === "true"
     const ingredientId = card.dataset.ingredientId
-    console.log(clicked)
+    // console.log(clicked)
     if (clicked) {
       this.arrayIngredients = this.arrayIngredients.filter(id => id !== ingredientId)
-      console.log(typeof ingredientId)
+      // console.log(typeof ingredientId)
       card.dataset.selected = "false"
     }
     else {
@@ -22,7 +22,7 @@ export default class extends Controller {
     }
     // this.element.dataset.selected = "true"
     // console.log(this.element.dataset.selected)
-    console.log(this.arrayIngredients)
+    // console.log(this.arrayIngredients)
   }
 
   submit(event) {
