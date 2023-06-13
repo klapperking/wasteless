@@ -34,6 +34,8 @@ class PagesController < ApplicationController
     else
       @shopping_list_ingredients = {}
     end
+
+    flash.notice = "validated"
   end
 
   private

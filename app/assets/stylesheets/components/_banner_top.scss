@@ -1,0 +1,15 @@
+.banner-top {
+  position: sticky;
+  top: 88.5px;
+  background-color: white;
+  z-index: 1;
+}
+
+.details-banner {
+  height: 50px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3px;
+}

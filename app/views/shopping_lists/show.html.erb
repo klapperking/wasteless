@@ -1,21 +1,24 @@
 <div class="container-sm">
-  <div class="shopping-list-banner my-4">
-    <div>
-      <h2>My Shopping List:</h2>
-    </div>
-    <div id="add-btn">
-      <%= link_to "#" do %>
-        <i class="fa-solid fa-plus"></i>
-      <% end %>
+  <div class="banner-top">
+    <div class="details-banner">
+      <div>
+        <h2>My Shopping List:</h2>
+      </div>
+      <div id="add-btn">
+        <%= link_to "#" do %>
+          <i class="fa-solid fa-plus"></i>
+        <% end %>
+      </div>
     </div>
   </div>
   <div data-controller="shopping-list">
-    <% @categories.each do |category_name| %>
+    <% @categories.each do |category| %>
       <div class="ingredient-card" id="category-card-bg" data-action="click->shopping-list#dropdown">
         <div class="ingredient-icon" >
+          <%= cl_image_tag category.icon.key %>
         </div>
         <div class="ingredient-name">
-          <%= category_name %>
+          <%= category.name %>
         </div>
         <div id="ingredient-dropdown">
           <i class="fa-solid fa-caret-down"></i>
@@ -23,7 +26,7 @@
       </div>
       <div>
         <% @ingredients.each do |ingredient| %>
-          <% if ingredient.category.name == category_name  %>
+          <% if ingredient.category.name == category.name  %>
             <div class="my-2">
               <div class="ingredient-card-edit">
                 <div class="ingredient-card" id="ingredient-card-bg">
@@ -48,8 +51,10 @@
         <% end %>
       </div>
     <% end %>
-    <div class="bottom-btn" data-action="click->shopping-list#submit">
-      <%= link_to "Shopping Done" %>
+    <div class="banner-bottom">
+      <div class="bottom-btn" data-action="click->shopping-list#submit">
+        <%= link_to "Shopping Done" %>
+      </div>
     </div>
   </div>
 </div>

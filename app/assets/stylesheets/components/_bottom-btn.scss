@@ -1,13 +1,24 @@
+.banner-bottom {
+  background-color: white;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  position: sticky;
+  bottom: 70px;
+}
+
 .bottom-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(158, 215, 99);
+  border: solid 0.1px rgb(158, 215, 99);
   padding: 5px;
   border-radius: 5px;
-  width: 45%;
+  width: 50%;
   height: 50px;
-  text-align: center;
-  position: absolute;
-  bottom: 80px;
-  right: 27%;
   font-size: 20px;
   font-weight: bold;
 
@@ -15,4 +26,6 @@
     text-decoration: none;
     color: black;
   }
+
+
 }
