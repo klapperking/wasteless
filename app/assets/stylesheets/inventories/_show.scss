@@ -21,7 +21,7 @@ h2 {
   border: 3px solid $green2;
   margin-bottom: 4px;
 
-  #ingredient-qty {
+  .ingredient-icon {
     background-color: $green2;
   }
 }
@@ -31,7 +31,7 @@ h2 {
   border-radius: 5px;
   margin-bottom: 4px;
 
-  #ingredient-qty {
+  .ingredient-icon {
     background-color: $green1;
   }
 }
@@ -41,7 +41,7 @@ h2 {
   border-radius: 5px;
   margin-bottom: 4px;
 
-  #ingredient-qty {
+  .ingredient-icon {
     background-color: $orange2;
   }
 }
@@ -51,7 +51,7 @@ h2 {
   border-radius: 5px;
   margin-bottom: 4px;
 
-  #ingredient-qty {
+  .ingredient-icon {
     background-color: $orange1;
   }
 }
@@ -61,7 +61,7 @@ h2 {
   border-radius: 5px;
   margin-bottom: 4px;
 
-  #ingredient-qty {
+  .ingredient-icon {
     background-color: $red2;
   }
 }
@@ -71,7 +71,7 @@ h2 {
   border-radius: 5px;
   margin-bottom: 4px;
 
-  #ingredient-qty {
+  .ingredient-icon {
     background-color: $red1;
   }
 }
@@ -80,7 +80,7 @@ h2 {
 
   border: 3px solid black;
 
-  #ingredient-qty {
+  .ingredient-icon {
     border-top: 3px solid black;
   }
 }
