@@ -1,0 +1,14 @@
+  <div data-selection-target="list">
+    <% inventory_ingredients.sort_by(&:expiration_date).each do |inventory_ingredient| %>
+        <div class="ingredient-card-edit">
+          <div class="<%= ingredient_color_class(inventory_ingredient.expiration_date) %> ingredient-card"  data-action="click->selection#select" data-selected="false" data-ingredient-id= "<%= inventory_ingredient.ingredient.id%>">
+            <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
+          </div>
+          <div id="ingredient-edit">
+            <%= link_to  edit_inventory_ingredient_path(inventory_ingredient) do%>
+            <i class="fa-solid fa-pencil"></i>
+            <% end %>
+          </div>
+        </div>
+    <% end %>
+  </div>

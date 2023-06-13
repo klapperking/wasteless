@@ -10,5 +10,9 @@ class InventoriesController < ApplicationController
       SQL
       @inventory_ingredients = @inventory_ingredients.joins(:ingredient).where(sql_subquery, query: "%#{params[:query]}%")
     end
+    respond_to do |format| # Follow regular flow of Rails
+      format.html
+      format.text { render partial: "inventories/inventory_ingredients", locals: {inventory_ingredients: @inventory_ingredients}, formats: [:html]  }
+    end
   end
 end

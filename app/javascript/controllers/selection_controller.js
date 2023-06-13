@@ -2,6 +2,8 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="selection"
 export default class extends Controller {
+  static targets = ["form", "input", "list"]
+
   arrayIngredients = []
   connect() {
   }
@@ -31,5 +33,18 @@ export default class extends Controller {
     console.log(this.arrayIngredients)
     const url = new URLSearchParams({ ingredients: ingredientString })
     window.location.href = `/recipes?${url.toString()}`
+  }
+
+  update(event) {
+    console.log(event.currentTarget)
+    if (event.currentTarget.value.length > 0 && event.currentTarget.value.length < 3) {
+      return
+    }
+    const url = `${this.formTarget.action}?query=${this.inputTarget.value}`
+    fetch(url, {headers: {"Accept": "text/plain"}})
+    .then(response => response.text())
+    .then((data) => {
+      this.listTarget.outerHTML = data
+    })
   }
 }

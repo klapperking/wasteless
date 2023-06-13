@@ -9,6 +9,11 @@ h2 {
   background-color: rgb(158, 215, 99);
   font-weight: bold;
   color: black;
+  border: 3px solid rgb(158, 215, 99) !important;
+
+  &:hover {
+    background-color: rgb(158, 215, 99) !important;
+  }
 }
 
 .title-add{
