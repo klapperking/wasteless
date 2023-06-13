@@ -18,6 +18,9 @@ class ShoppingListsController < ApplicationController
       @categories.push(category) unless @categories.include?(category)
     end
 
+    @shoppinglist_ingredient = ShoppingListIngredient.new
+    @shoppinglist_ingredient.shopping_list = @shopping_list
+
     # possibly missing auth for other view-vars?
     authorize @shopping_list
   end
@@ -48,6 +51,9 @@ class ShoppingListsController < ApplicationController
         shopping_list: @to_add_to_shopping_list
       )
     )
+  end
+
+  def create
   end
 
   private

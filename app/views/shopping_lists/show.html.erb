@@ -1,15 +1,20 @@
-<div class="container-sm">
+<div class="container-sm" data-controller="shopping-list" >
   <div class="banner-top">
     <div class="details-banner">
       <div>
         <h2>My Shopping List:</h2>
       </div>
-      <div id="add-btn">
-        <%= link_to "#" do %>
+      <div id="add-btn" data-action="click->shopping-list#new" >
           <i class="fa-solid fa-plus"></i>
-        <% end %>
       </div>
     </div>
+  </div>
+  <div class="d-none" data-shopping-list-target="form" >
+    <%= simple_form_for @shoppinglist_ingredient do |f| %>
+      <%= f.input :ingredient_id, collection: Ingredient.all %>
+      <%= f.input :quantity %>
+      <%= f.submit 'Add an ingredient'%>
+<% end %>
   </div>
   <div data-controller="shopping-list">
     <% @categories.each do |category| %>

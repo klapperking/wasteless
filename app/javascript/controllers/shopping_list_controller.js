@@ -2,7 +2,9 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="shopping-list"
 export default class extends Controller {
+  static targets = ["form"]
   arrayIngredients = []
+
   connect() {
   }
 
@@ -70,5 +72,9 @@ export default class extends Controller {
     console.log(categoryCard);
     const ingredientCard = categoryCard.nextElementSibling
     ingredientCard.classList.toggle("d-none")
+  }
+
+  new() {
+    this.formTarget.classList.toggle("d-none")
   }
 }
