@@ -12,6 +12,10 @@ class ShoppingListIngredientsController < ApplicationController
     end
   end
 
+  def update
+    raise
+  end
+
   private
 
   def set_shopping_list
