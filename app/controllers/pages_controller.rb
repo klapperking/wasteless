@@ -35,7 +35,7 @@ class PagesController < ApplicationController
       @shopping_list_ingredients = {}
     end
 
-    flash.notice = "validated"
+    flash.notice = 'Wasteless updated !'
   end
 
   private
