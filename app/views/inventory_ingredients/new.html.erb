@@ -5,3 +5,10 @@
   <%= f.input :quantity %>
   <%= f.submit %>
 <% end %>
+
+<div data-controller="barcode-handler">
+  <input type="file" name="image" accept="image/*"
+    capture="environment"
+    data-action="change->barcode-handler#findbyBarcode"
+    data-barcode-handler-target="videoInput">
+</div>
