@@ -1,22 +1,24 @@
 <div class="container-sm">
-  <div class="title-add">
-    <h2><strong>Pick your ingredients!</strong></h2>
-    <div id="add-btn">
-      <%= link_to new_inventory_inventory_ingredient_path(@inventory) do %>
-        <i class="fa-solid fa-plus"></i>
-      <% end %>
+  <div class="banner-top">
+    <div class="title-add">
+      <h2><strong>Pick your ingredients!</strong></h2>
+      <div id="add-btn">
+        <%= link_to new_inventory_inventory_ingredient_path(@inventory) do %>
+          <i class="fa-solid fa-plus"></i>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-sm-8 my-3">
-      <%= form_with url: inventory_path(@inventory), method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Type a keyword"
-          %>
-        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-      <% end %>
+    <div class="row justify-content-center">
+      <div class="col-sm-8 my-3">
+        <%= form_with url: inventory_path(@inventory), method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Type a keyword"
+            %>
+          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
   </div>
   <div data-controller="selection" >

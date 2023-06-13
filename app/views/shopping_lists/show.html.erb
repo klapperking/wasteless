@@ -14,9 +14,9 @@
       <%= f.input :ingredient_id, collection: Ingredient.all %>
       <%= f.input :quantity %>
       <%= f.submit 'Add an ingredient'%>
-<% end %>
+    <% end %>
   </div>
-  <div data-controller="shopping-list">
+  <div>
     <% @categories.each do |category| %>
       <div class="ingredient-card" id="category-card-bg" data-action="click->shopping-list#dropdown">
         <div class="ingredient-icon" >
@@ -29,7 +29,7 @@
           <i class="fa-solid fa-caret-down"></i>
         </div>
       </div>
-      <div>
+      <div data-shopping-list-target="shopping">
         <% @ingredients.each do |ingredient| %>
           <% if ingredient.category.name == category.name  %>
             <div class="my-2">
@@ -42,13 +42,16 @@
                     <p><%= ingredient.name%></p>
                   </div>
                   <div id="ingredient-qty">
-                    <p><%= @shoppinglist_ingredients.find_by(ingredient:).quantity %></p>
+                    <p data-shoppinglist-paragraph="<%= ingredient.id %>"><%= @shoppinglist_ingredients.find_by(ingredient:).quantity %></p>
+                    <div data-shoppinglist="<%= ingredient.id %>" class="d-none">
+                      <%= simple_form_for @shoppinglist_ingredient do |f| %>
+                        <%= f.input :quantity %>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
-                <div id="ingredient-edit">
-                  <%= link_to "#" do%>
+                <div id="ingredient-edit" data-action="click->shopping-list#edit" data-event-id="<%= ingredient.id %>">
                     <i class="fa-solid fa-pencil"></i>
-                  <% end %>
                 </div>
               </div>
             </div>
@@ -56,10 +59,10 @@
         <% end %>
       </div>
     <% end %>
-    <div class="banner-bottom">
-      <div class="bottom-btn" data-action="click->shopping-list#submit">
-        <%= link_to "Shopping Done" %>
-      </div>
+  </div>
+  <div class="banner-bottom">
+    <div class="bottom-btn" data-action="click->shopping-list#submit">
+      <%= link_to "Shopping Done" %>
     </div>
   </div>
 </div>

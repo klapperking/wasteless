@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="shopping-list"
 export default class extends Controller {
-  static targets = ["form"]
+  static targets = ["form", "edit", "paragraph", "shopping"]
   arrayIngredients = []
 
   connect() {
@@ -76,5 +76,14 @@ export default class extends Controller {
 
   new() {
     this.formTarget.classList.toggle("d-none")
+  }
+
+  edit(event) {
+    console.log(this.shoppingTarget);
+    const eventId = event.currentTarget.dataset.eventId
+    console.log(eventId);
+    console.log(document.querySelector(`[data-shoppinglist-paragrah="${eventId}"]`));
+    // this.paragraphTarget.classList.toggle("d-none")
+    // this.editTarget.classList.toggle("d-none")
   }
 }

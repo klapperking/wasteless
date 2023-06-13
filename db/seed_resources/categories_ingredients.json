@@ -82,7 +82,7 @@
       "category_info": {
         "name": "Fruit",
         "days_to_expiry": 10,
-        "measuring_unit": "u.",
+        "measuring_unit": " ",
         "icon_url": "https://cdn-icons-png.flaticon.com/512/3194/3194766.png"
       },
       "ingredients": [
@@ -102,7 +102,7 @@
       "category_info": {
         "name": "Vegetables",
         "days_to_expiry": 20,
-        "measuring_unit": "u.",
+        "measuring_unit": " ",
         "icon_url": "https://cdn-icons-png.flaticon.com/512/2153/2153788.png"
       },
       "ingredients": [
