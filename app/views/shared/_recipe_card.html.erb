@@ -7,10 +7,14 @@
             <h5><%= recipe.name %></h5>
           </div>
           <div id="recipe-nb-ingredients">
-            <p><%= recipe.ingredients.count %> ingredients</p>
+          <% @available_ingredients = [] %>
+          <% recipe.ingredients.each do |ingr| %>
+            <% @available_ingredients << ingr if @all_ingredients.include?(ingr.id) %>
+          <% end %>
+            <p><%= @available_ingredients.count %> / <%= recipe.ingredients.count %> ingredients</p>
           </div>
           <div id="recipe-nb-people">
-            <p><%= recipe.number_of_people %> person</p>
+            <p><%= recipe.number_of_people %> <%= recipe.number_of_people > 1 ? "people" : "person" %></p>
           </div>
         </div>
       </div>

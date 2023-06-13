@@ -1,10 +1,11 @@
 .recipe-card {
   width: 100%;
   height: 93px;
-  background-color: #E8EDD5;
+  background-color: white;
   border-radius: 5px;
-  border: solid 1px black;
+  border: solid 0.5px gray;
   display: flex;
+  box-shadow: 1px 1px 1px gray;
 }
 
 .recipe-details-card {
@@ -30,6 +31,7 @@
   img {
     width: 100%;
     height: 100%;
+    border-radius: 5px 0 0 5px;
   }
 }
 

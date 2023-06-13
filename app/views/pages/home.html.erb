@@ -1,6 +1,9 @@
 <div class="container-sm">
   <div>
-    <%= pie_chart @my_ingredients, pie: true, colors: ["FF0C0D", "#FF4E10", "#FF8E15", "#FAB732", "#ABB333", "#68B34B"], width: "100%" %>
+    <h2>Welcome Back <%= current_user.first_name %></h2>
+  </div>
+  <div>
+    <%= pie_chart @my_ingredients, pie: true, legend: false, colors: ["FF0C0D", "#FF4E10", "#FF8E15", "#FAB732", "#ABB333", "#68B34B"], width: "100%" %>
   </div>
   <div class="my-3">
     <h3>Recommended Ingredients:</h3>
@@ -48,7 +51,7 @@
     <div class="my-3 regular-link">
       <h3>Last Recipe Cooked:</h3>
       <%= link_to(recipe_path(@recipe)) do %>
-        <%= render partial: "shared/recipe_card", locals: { recipe: @recipe } %>
+        <%= render partial: "shared/recipe_card", locals: { recipe: @recipe, ingredients: @all_ingredients } %>
       <% end %>
     </div>
   </div>
