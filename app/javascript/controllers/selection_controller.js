@@ -45,6 +45,16 @@ export default class extends Controller {
     .then(response => response.text())
     .then((data) => {
       this.listTarget.outerHTML = data
+      this.persist()
+    })
+  }
+
+  persist() {
+    this.arrayIngredients.forEach((ingredient) => {
+      const card_selected = this.listTarget.querySelector(`[data-ingredient-id="${ingredient}"]`)
+      if (card_selected) {
+        card_selected.dataset.selected = "true"
+      }
     })
   }
 }
