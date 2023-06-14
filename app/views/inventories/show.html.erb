@@ -2,11 +2,16 @@
  <div class="banner-top">
   <div class="title-add">
     <h2><strong>Pick your ingredients!</strong></h2>
-    <div id="add-btn">
-      <%= link_to new_inventory_inventory_ingredient_path(@inventory) do %>
-        <i class="fa-solid fa-plus"></i>
-      <% end %>
+    <div id="add-btn" data-action="click->selection#new">
+      <i class="fa-solid fa-plus"></i>
     </div>
+  </div>
+  <div class="d-none" data-selection-target="add" >
+    <%= simple_form_for [@inventory, @inventory_ingredient] do |f| %>
+      <%= f.input :ingredient_id, collection: Ingredient.all %>
+      <%= f.input :quantity %>
+      <%= f.submit 'Add an ingredient'%>
+    <% end %>
   </div>
   <div class="row justify-content-center">
     <div class="col-sm-8 my-3">
@@ -23,7 +28,7 @@
       <% end %>
     </div>
   </div>
-</div> 
+</div>
   <%= render partial: "inventory_ingredients", locals: { inventory_ingredients: @inventory_ingredients } %>
     <div class="banner-bottom">
       <button class="bottom-btn" data-action="click->selection#submit"> Get me recipes! </button>

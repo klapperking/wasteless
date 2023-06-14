@@ -24,10 +24,16 @@ class InventoryIngredientsController < ApplicationController
   end
 
   def update
+    @inventory = Inventory.find_by(user: current_user)
     @inventory_ingredient = InventoryIngredient.find(params[:id])
     authorize @inventory_ingredient
-    @inventory_ingredient.update(ingredient_params)
-    redirect_to inventory_path(@inventory_ingredient.inventory)
+    if params[:inventory_ingredient][:quantity].to_i <= 0
+      @inventory_ingredient.destroy
+    else
+      @inventory_ingredient.update(ingredient_params)
+      @inventory_ingredient.save
+    end
+    redirect_to inventory_path(@inventory)
   end
 
   def destroy
