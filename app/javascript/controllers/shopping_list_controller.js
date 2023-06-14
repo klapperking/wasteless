@@ -82,9 +82,9 @@ export default class extends Controller {
     // console.log(this.shoppingTarget);
     const eventId = event.currentTarget.dataset.eventId
     // console.log(eventId);
-    const paragraph = document.querySelector(`[data-shoppinglist-paragraph='${eventId}']`)
+    const paragraph = document.querySelector(`[data-selection-paragraph='${eventId}']`)
     // console.log(paragraph);
-    const form = document.querySelector(`[data-shoppinglist-form='${eventId}']`)
+    const form = document.querySelector(`[data-sselection-form='${eventId}']`)
     console.log(form);
     paragraph.classList.toggle("d-none")
     form.classList.toggle("d-none")

@@ -4,10 +4,8 @@
           <div class="<%= ingredient_color_class(inventory_ingredient.expiration_date) %> ingredient-card"  data-action="click->selection#select" data-selected="false" data-ingredient-id= "<%= inventory_ingredient.ingredient.id%>">
             <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
           </div>
-          <div id="ingredient-edit">
-            <%= link_to  edit_inventory_ingredient_path(inventory_ingredient) do%>
+          <div id="ingredient-edit" data-action="click->selection#edit" data-event-id="<%= inventory_ingredient.id %>">
             <i class="fa-solid fa-pencil"></i>
-            <% end %>
           </div>
         </div>
     <% end %>
