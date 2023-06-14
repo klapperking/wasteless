@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
     flash[:alert] = "You are not authorized to perform this action."
   end
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   private
 
   def skip_pundit?
