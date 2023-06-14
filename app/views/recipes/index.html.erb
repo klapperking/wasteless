@@ -10,7 +10,7 @@
     <% @match_order.each do |recipe, count| %>
       <div class= "my-3 regular-link">
         <%= link_to(recipe_path(recipe)) do %>
-          <%= render partial: "shared/recipe_card", locals: { recipe: recipe } %>
+          <%= render partial: "shared/recipe_card", locals: { recipe: recipe, ingredients: @all_ingredients } %>
         <% end %>
       </div>
     <% end %>
@@ -30,7 +30,7 @@
     <% @recipes.each do |recipe| %>
         <div class= "my-3 regular-link">
           <%= link_to(recipe_path(recipe)) do %>
-            <%= render partial: "shared/recipe_card", locals: { recipe: recipe } %>
+            <%= render partial: "shared/recipe_card", locals: { recipe: recipe, ingredients: @all_ingredients } %>
           <% end %>
         </div>
     <% end %>

@@ -1,4 +1,5 @@
 <div class="container-sm" data-controller="selection">
+ <div class="banner-top">
   <div class="title-add">
     <h2><strong>Pick your ingredients!</strong></h2>
     <div id="add-btn">
@@ -22,6 +23,7 @@
       <% end %>
     </div>
   </div>
+</div> 
   <%= render partial: "inventory_ingredients", locals: { inventory_ingredients: @inventory_ingredients } %>
     <div class="banner-bottom">
       <button class="bottom-btn" data-action="click->selection#submit"> Get me recipes! </button>

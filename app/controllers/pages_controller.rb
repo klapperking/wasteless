@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   before_action :confirmation_params, only: [:confirmation]
 
   def home
+    @all_ingredients = InventoryIngredient.all.pluck(:ingredient_id)
     @inventory = Inventory.find(current_user.id)
     @recipe = Recipe.last
     @ingredients = @inventory.inventory_ingredients
@@ -15,6 +16,9 @@ class PagesController < ApplicationController
   end
 
   def confirmation
+    # get all ingredients
+    @all_ingredients = InventoryIngredient.all.pluck(:ingredient_id)
+
     # get recipe to display
     @recipe = Recipe.find(params[:recipe])
 

@@ -4,6 +4,9 @@ class RecipesController < ApplicationController
     # get recipes for current_user
     @recipes = policy_scope(Recipe)
 
+    # number of ingredient available
+    @all_ingredients = InventoryIngredient.all.pluck(:ingredient_id)
+
     # If called with ingredient query, find best match for ingredient ids and order recipes by matchcount
     if params.key?(:ingredients)
       # Example query: /?ingredients={ing_id},{ing_id}
