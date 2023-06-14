@@ -1,22 +1,22 @@
 <div class="navbar-bottom">
   <%= link_to root_path do %>
-    <i class="fa-solid fa-house"></i>
+    <%= image_tag "home-icon.png" %>
   <% end %>
   <% if user_signed_in? %>
     <%= link_to inventory_path(current_user) do %>
-      <i class="fa-solid fa-box-archive"></i>
+      <%= image_tag "ingredients-icon.png" %>
     <% end %>
   <% else %>
-    <i class="fa-solid fa-box-archive"></i>
+    <%= image_tag "ingredients-icon.png" %>
   <% end %>
   <%= link_to recipes_path() do %>
-    <i class="fa-solid fa-utensils"></i>
+    <%= image_tag "recipe-icon.png" %>
   <% end %>
   <% if user_signed_in? %>
     <%= link_to shopping_list_path(current_user) do %>
-      <i class="fa-solid fa-list-check"></i>
+      <%= image_tag "shopping-list-icon.png" %>
     <% end %>
   <% else %>
-    <i class="fa-solid fa-list-check"></i>
+    <%= image_tag "shopping-list-icon.png" %>
   <% end %>
 </div>
