@@ -13,7 +13,20 @@ class ShoppingListIngredientsController < ApplicationController
   end
 
   def update
-    raise
+    @shopping_list = ShoppingList.find_by(user: current_user)
+    @shopping_list_ingredient = ShoppingListIngredient.find(params[:id])
+    authorize @shopping_list_ingredient
+    if params[:shopping_list_ingredient][:quantity].to_i <= 0
+      @shopping_list_ingredient.destroy
+      redirect_to shopping_list_path(@shopping_list)
+    else
+      @shopping_list_ingredient.update(shopping_ingredient_params)
+      if @shopping_list_ingredient.save
+        redirect_to shopping_list_path(@shopping_list)
+      else
+        render `shopping_lists/#{@shopping_list}`, status: :unprocessable_entity
+      end
+    end
   end
 
   private

@@ -43,9 +43,9 @@
                   </div>
                   <div id="ingredient-qty">
                     <p data-shoppinglist-paragraph="<%= ingredient.id %>"><%= @shoppinglist_ingredients.find_by(ingredient:).quantity %></p>
-                    <div data-shoppinglist="<%= ingredient.id %>" class="d-none">
-                      <%= simple_form_for @shoppinglist_ingredient do |f| %>
-                        <%= f.input :quantity %>
+                    <div data-shoppinglist-form="<%= ingredient.id %>" class="d-none">
+                      <%= simple_form_for @shoppinglist_ingredients.find_by(ingredient:), html: { class:"form-update" } do |f| %>
+                        <%= f.input :quantity, label: false %>
                       <% end %>
                     </div>
                   </div>

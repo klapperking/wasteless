@@ -18,8 +18,13 @@ class ShoppingListsController < ApplicationController
       @categories.push(category) unless @categories.include?(category)
     end
 
+    # for the new shoppinglist ingredient
     @shoppinglist_ingredient = ShoppingListIngredient.new
     @shoppinglist_ingredient.shopping_list = @shopping_list
+
+    # for update a shoppinglist ingredient
+
+
 
     # possibly missing auth for other view-vars?
     authorize @shopping_list
