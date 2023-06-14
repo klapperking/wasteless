@@ -19,7 +19,19 @@
     width: 100%;
   }
 
+  img {
+    display: flex;
+    font-size: 30px;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: auto;
+  }
+
   a {
+    display: flex;
+    justify-content: center;
     width: 25%;
     height: 70%;
     text-align: center;
