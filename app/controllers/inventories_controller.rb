@@ -1,9 +1,14 @@
 class InventoriesController < ApplicationController
   def show
-
     # get the inventory for current-user using policy
     @inventory = policy_scope(Inventory)
     authorize @inventory
+
+    # if coming from camera button do something
+    if params[:scan]
+      barcode_prep()
+    end
+
     @inventory_ingredients = @inventory.inventory_ingredients
     if params[:query].present?
       sql_subquery = <<~SQL
@@ -19,6 +24,14 @@ class InventoriesController < ApplicationController
     # get a new inventory ingredient
     @inventory_ingredient = InventoryIngredient.new
     @inventory_ingredient.inventory = @inventory
+  end
 
+  def barcode_prep
+    session[:new_scan] = true
+    # if page is reloaded, dont trigger camera again
+    if session.key?(:new_scan)
+      @scan_reffered = session[:new_scan]
+      session.delete(:new_scan)
+    end
   end
 end
