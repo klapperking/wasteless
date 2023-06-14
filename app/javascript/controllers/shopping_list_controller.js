@@ -79,11 +79,15 @@ export default class extends Controller {
   }
 
   edit(event) {
-    console.log(this.shoppingTarget);
+    // console.log(this.shoppingTarget);
     const eventId = event.currentTarget.dataset.eventId
-    console.log(eventId);
-    console.log(document.querySelector(`[data-shoppinglist-paragrah="${eventId}"]`));
-    // this.paragraphTarget.classList.toggle("d-none")
-    // this.editTarget.classList.toggle("d-none")
+    // console.log(eventId);
+    const paragraph = document.querySelector(`[data-shoppinglist-paragraph='${eventId}']`)
+    // console.log(paragraph);
+    const form = document.querySelector(`[data-shoppinglist-form='${eventId}']`)
+    console.log(form);
+    paragraph.classList.toggle("d-none")
+    form.classList.toggle("d-none")
+
   }
 }
