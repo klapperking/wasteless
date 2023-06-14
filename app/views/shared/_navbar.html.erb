@@ -2,6 +2,16 @@
   <div class="navbar navbar-lw">
     <div class="container-sm">
       <div class="navbar-position">
+        <% if user_signed_in? %>
+          <%= link_to(
+            inventory_path(
+              Inventory.find_by(user: current_user),
+              scan: true
+              )
+            ) do %>
+            <i class="fa-solid fa-camera-retro"></i>
+          <% end %>
+        <% end %>
       </div>
       <div>
         <%= image_tag "logo-green-cropped.PNG", class: "logo" %>
