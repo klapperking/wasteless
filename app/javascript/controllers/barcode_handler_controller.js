@@ -4,7 +4,7 @@ import Quagga from 'quagga';
 
 // Connects to data-controller="barcode-handler"
 export default class extends Controller {
-  static targets = ["videoInput"]
+  static targets = ["videoInput", "barcode"]
 
   connect() {
     console.log("controller connected")
@@ -20,11 +20,14 @@ export default class extends Controller {
     let detectedResult = await this.detectBarcode()
     let barcode = detectedResult.codeResult.code
 
+    this.barcodeTarget.innerHTML = `<p>${barcode}</p>`
+
     console.log(barcode)
     if (!barcode) {
       console.log("Couldn't find a barcode, please try again")
       return
     }
+
 
     let location = `https://world.openfoodfacts.org/api/v0/product/${barcode}.json`
 
