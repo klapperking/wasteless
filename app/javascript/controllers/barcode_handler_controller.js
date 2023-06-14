@@ -18,20 +18,26 @@ export default class extends Controller {
 
     // attempt to locate and read barcode in image
     let detectedResult = await this.detectBarcode()
-    let barcode = detectedResult.codeResult.code
-
-    this.barcodeTarget.innerHTML = `<p>${barcode}</p>`
-
-    console.log(barcode)
-    if (!barcode) {
-      console.log("Couldn't find a barcode, please try again")
-      return
+    if (detectedResult) {
+      let barcode = detectedResult.codeResult.code
     }
 
+    // for now harcoded Gallo Spaghetti
+    let spaghettiBarcode = "8410069018540"
+    // let integrealBarcode = "8426765496295"
 
-    let location = `https://world.openfoodfacts.org/api/v0/product/${barcode}.json`
+    let offUrl = `https://world.openfoodfacts.org/api/v0/product/${spaghettiBarcode}.json`
 
-    fetch(location).then(console.log)
+    let ingredientInfo = await fetch(offUrl).then(response => response.json())
+
+    console.log(ingredientInfo)
+
+    let ingredientName = ingredientInfo.product.product_name
+
+    console.log(ingredientName)
+
+    this.barcodeTarget.innerHTML = `<p>${ingredientName}</p>`
+    // fetch(location).then(console.log)
   }
 
   detectBarcode() {
