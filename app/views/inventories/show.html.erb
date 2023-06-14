@@ -1,99 +1,31 @@
-<div class="container-sm">
-  <div class="banner-top">
-    <div class="title-add">
-      <h2><strong>Pick your ingredients!</strong></h2>
-      <div id="add-btn">
-        <%= link_to new_inventory_inventory_ingredient_path(@inventory) do %>
-          <i class="fa-solid fa-plus"></i>
-        <% end %>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-sm-8 my-3">
-        <%= form_with url: inventory_path(@inventory), method: :get, class: "d-flex" do %>
-          <%= text_field_tag :query,
-                params[:query],
-                class: "form-control",
-                placeholder: "Type a keyword"
-            %>
-          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-        <% end %>
-      </div>
+<div class="container-sm" data-controller="selection">
+ <div class="banner-top">
+  <div class="title-add">
+    <h2><strong>Pick your ingredients!</strong></h2>
+    <div id="add-btn">
+      <%= link_to new_inventory_inventory_ingredient_path(@inventory) do %>
+        <i class="fa-solid fa-plus"></i>
+      <% end %>
     </div>
   </div>
-  <div data-controller="selection" >
-
-    <% @inventory_ingredients.sort_by(&:expiration_date).each do |inventory_ingredient| %>
-      <% if inventory_ingredient.expiration_date > Date.today + 30 %>
-        <div class="ingredient-card-edit">
-          <div class="green2 ingredient-card"  data-action="click->selection#select" data-selected="false" data-ingredient-id= "<%= inventory_ingredient.ingredient.id%>">
-            <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
-          </div>
-          <div id="ingredient-edit">
-            <%= link_to  edit_inventory_ingredient_path(inventory_ingredient) do%>
-            <i class="fa-solid fa-pencil"></i>
-            <% end %>
-          </div>
-        </div>
-      <% elsif inventory_ingredient.expiration_date > Date.today + 15 %>
-        <div class="ingredient-card-edit">
-          <div class="green1 ingredient-card"  data-action="click->selection#select" data-selected="false" data-ingredient-id= "<%= inventory_ingredient.ingredient.id%>">
-            <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
-          </div>
-          <div id="ingredient-edit">
-            <%= link_to edit_inventory_ingredient_path(inventory_ingredient) do%>
-            <i class="fa-solid fa-pencil"></i>
-            <% end %>
-          </div>
-        </div>
-      <% elsif inventory_ingredient.expiration_date > Date.today + 7 %>
-        <div class="ingredient-card-edit">
-          <div class="orange2 ingredient-card"  data-action="click->selection#select" data-selected="false" data-ingredient-id= "<%= inventory_ingredient.ingredient.id%>">
-            <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
-          </div>
-          <div id="ingredient-edit">
-            <%= link_to edit_inventory_ingredient_path(inventory_ingredient) do%>
-            <i class="fa-solid fa-pencil"></i>
-            <% end %>
-          </div>
-        </div>
-      <% elsif inventory_ingredient.expiration_date > Date.today + 4 %>
-        <div class="ingredient-card-edit">
-          <div class="orange1 ingredient-card"  data-action="click->selection#select" data-selected="false" data-ingredient-id= "<%= inventory_ingredient.ingredient.id%>">
-            <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
-          </div>
-          <div id="ingredient-edit">
-            <%= link_to edit_inventory_ingredient_path(inventory_ingredient) do%>
-            <i class="fa-solid fa-pencil"></i>
-            <% end %>
-          </div>
-        </div>
-      <% elsif inventory_ingredient.expiration_date > Date.today + 2 %>
-        <div class="ingredient-card-edit">
-          <div class="red2 ingredient-card"  data-action="click->selection#select" data-selected="false" data-ingredient-id= "<%= inventory_ingredient.ingredient.id%>">
-            <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
-          </div>
-          <div id="ingredient-edit">
-            <%= link_to edit_inventory_ingredient_path(inventory_ingredient) do%>
-            <i class="fa-solid fa-pencil"></i>
-            <% end %>
-          </div>
-        </div>
-      <% else %>
-        <div class="ingredient-card-edit">
-          <div class="red1 ingredient-card"  data-action="click->selection#select" data-selected="false" data-ingredient-id= "<%= inventory_ingredient.ingredient.id%>">
-            <%= render partial: "shared/ingredient_card", locals: { :inventory_ingredient => inventory_ingredient } %>
-          </div>
-          <div id="ingredient-edit">
-            <%= link_to edit_inventory_ingredient_path(inventory_ingredient) do%>
-            <i class="fa-solid fa-pencil"></i>
-            <% end %>
-          </div>
-        </div>
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: inventory_path(@inventory), method: :get, class: "d-flex", data: {selection_target: "form"} do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Type a keyword",
+              data: {selection_target: "input",
+              action: "keyup->selection#update",
+              }
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
       <% end %>
-    <% end %>
+    </div>
+  </div>
+</div> 
+  <%= render partial: "inventory_ingredients", locals: { inventory_ingredients: @inventory_ingredients } %>
     <div class="banner-bottom">
       <button class="bottom-btn" data-action="click->selection#submit"> Get me recipes! </button>
     </div>
-  </div>
 </div>
