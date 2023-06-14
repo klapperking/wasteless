@@ -1,0 +1,39 @@
+.ingredients-details {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 5px;
+  border: solid 0.5px gray;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 1px gray;
+}
+
+.ingredients-details-grid {
+  margin: 10px 20px 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  border-bottom: solid 2px black;
+}
+
+.ingredients-details-description {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.quantity-green {
+  color: rgba(104,179,75,0.8);
+}
+
+.quantity-orange {
+  color: rgba(250,183,50,0.8);
+}
+
+.quantity-red {
+  color: rgba(255,12,13,0.8);
+}
