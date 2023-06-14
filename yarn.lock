@@ -343,6 +343,11 @@
   dependencies:
     "tweetnacl" "^0.14.3"
 
+"bluebird@^3.5.0":
+  "integrity" "sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg=="
+  "resolved" "https://registry.npmjs.org/bluebird/-/bluebird-3.7.2.tgz"
+  "version" "3.7.2"
+
 "bootstrap@^5.3.0":
   "integrity" "sha512-UnBV3E3v4STVNQdms6jSGO2CvOkjUMdDAVR2V5N4uCMdaIkaQjbcEAMqRimDHIs4uqBYzDAKCQwCB+97tJgHQw=="
   "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-5.3.0.tgz"
@@ -783,7 +788,7 @@
   dependencies:
     "p-locate" "^4.1.0"
 
-"lodash@^4.17.4":
+"lodash@^4.17.19", "lodash@^4.17.4":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
   "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   "version" "4.17.21"
@@ -850,6 +855,13 @@
   "integrity" "sha512-LMJTtvgc/nugXj0Vcrrs68Mn2D1r0zf630VNtqtpI1FEO7e+O9FP4gqs9AcnBaSEeoHIPm28u6qgPR0oyEpGSw=="
   "resolved" "https://registry.npmjs.org/omggif/-/omggif-1.0.10.tgz"
   "version" "1.0.10"
+
+"openfoodfacts-nodejs@^0.1.0":
+  "integrity" "sha512-z70TnSo3z8e/FGaTCcVw4bp077SqNfA7schr2aXjcwa+MpzVahmJM8N7ndanfvKX6u3aNmQ/OvmuU/hUMN9Jhg=="
+  "resolved" "https://registry.npmjs.org/openfoodfacts-nodejs/-/openfoodfacts-nodejs-0.1.0.tgz"
+  "version" "0.1.0"
+  dependencies:
+    "request-promise" "^4.2.6"
 
 "p-limit@^2.2.0":
   "integrity" "sha512-//88mFWSJx8lxCzwdAABTJL2MyWB12+eIY7MDL2SqLmAkeKU9qxRvWuSyTjm3FUmpBEMuFfckAIqEaVGUDxb6w=="
@@ -956,7 +968,24 @@
   dependencies:
     "resolve" "^1.20.0"
 
-"request@^2.44.0":
+"request-promise-core@1.1.4":
+  "integrity" "sha512-TTbAfBBRdWD7aNNOoVOBH4pN/KigV6LyapYNNlAPA8JwbovRti1E88m3sYAwsLi5ryhPKsE9APwnjFTgdUjTpw=="
+  "resolved" "https://registry.npmjs.org/request-promise-core/-/request-promise-core-1.1.4.tgz"
+  "version" "1.1.4"
+  dependencies:
+    "lodash" "^4.17.19"
+
+"request-promise@^4.2.6":
+  "integrity" "sha512-HCHI3DJJUakkOr8fNoCc73E5nU5bqITjOYFMDrKHYOXWXrgD/SBaC7LjwuPymUprRyuF06UK7hd/lMHkmUXglQ=="
+  "resolved" "https://registry.npmjs.org/request-promise/-/request-promise-4.2.6.tgz"
+  "version" "4.2.6"
+  dependencies:
+    "bluebird" "^3.5.0"
+    "request-promise-core" "1.1.4"
+    "stealthy-require" "^1.1.1"
+    "tough-cookie" "^2.3.3"
+
+"request@^2.34", "request@^2.44.0":
   "integrity" "sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw=="
   "resolved" "https://registry.npmjs.org/request/-/request-2.88.2.tgz"
   "version" "2.88.2"
@@ -1076,6 +1105,11 @@
     "safer-buffer" "^2.0.2"
     "tweetnacl" "~0.14.0"
 
+"stealthy-require@^1.1.1":
+  "integrity" "sha512-ZnWpYnYugiOVEY5GkcuJK1io5V8QmNYChG62gSit9pQVGErXtrKuPC55ITaVSukmMta5qpMU7vqLt2Lnni4f/g=="
+  "resolved" "https://registry.npmjs.org/stealthy-require/-/stealthy-require-1.1.1.tgz"
+  "version" "1.1.1"
+
 "supports-color@^8.0.0":
   "integrity" "sha512-MpUEN2OodtUzxvKQl72cUF7RQ5EiHsGvSsVG0ia9c5RbWGL2CI4C7EpPS8UTBIplnlzZiNuV56w+FuNxy3ty2Q=="
   "resolved" "https://registry.npmjs.org/supports-color/-/supports-color-8.1.1.tgz"
@@ -1119,7 +1153,7 @@
   "resolved" "https://registry.npmjs.org/through/-/through-2.3.8.tgz"
   "version" "2.3.8"
 
-"tough-cookie@~2.5.0":
+"tough-cookie@^2.3.3", "tough-cookie@~2.5.0":
   "integrity" "sha512-nlLsUzgm1kfLXSXfRZMc1KLAugd4hqJHDTvc2hDIwS3mZAfMEuMbc03SujMF+GEcpaX/qboeycw6iO8JwVv2+g=="
   "resolved" "https://registry.npmjs.org/tough-cookie/-/tough-cookie-2.5.0.tgz"
   "version" "2.5.0"
