@@ -9,7 +9,7 @@
           <div id="recipe-nb-ingredients">
           <% @available_ingredients = [] %>
           <% recipe.ingredients.each do |ingr| %>
-            <% @available_ingredients << ingr if @all_ingredients.include?(ingr.id) %>
+            <% @available_ingredients << ingr if @inventory_ingredients_ingredients.include?(ingr) %>
           <% end %>
             <p><%= @available_ingredients.count %> / <%= recipe.ingredients.count %> ingredients</p>
           </div>

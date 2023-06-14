@@ -3,8 +3,9 @@ class PagesController < ApplicationController
   before_action :confirmation_params, only: [:confirmation]
 
   def home
-    @all_ingredients = InventoryIngredient.all.pluck(:ingredient_id)
-    @inventory = Inventory.find(current_user.id)
+    @inventory = Inventory.find_by(user: current_user)
+    @inventory_ingredients = @inventory.inventory_ingredients
+    @inventory_ingredients_ingredients = @inventory_ingredients.map { |inventory_ingredient| inventory_ingredient.ingredient}
     @recipe = Recipe.last
     @ingredients = @inventory.inventory_ingredients
     @my_ingredients = { "Expir. -2 days" => @ingredients.select { |ingredient| ingredient.expiration_date <= Date.today + 2}.count,
@@ -17,7 +18,9 @@ class PagesController < ApplicationController
 
   def confirmation
     # get all ingredients
-    @all_ingredients = InventoryIngredient.all.pluck(:ingredient_id)
+    @inventory = Inventory.find_by(user: current_user)
+    @inventory_ingredients = @inventory.inventory_ingredients
+    @inventory_ingredients_ingredients = @inventory_ingredients.map { |inventory_ingredient| inventory_ingredient.ingredient}
 
     # get recipe to display
     @recipe = Recipe.find(params[:recipe])

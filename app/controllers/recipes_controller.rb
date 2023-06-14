@@ -5,8 +5,9 @@ class RecipesController < ApplicationController
     @recipes = policy_scope(Recipe)
 
     # number of ingredient available
-    @all_ingredients = InventoryIngredient.all.pluck(:ingredient_id)
-
+    @inventory = Inventory.find_by(user: current_user)
+    @inventory_ingredients = @inventory.inventory_ingredients
+    @inventory_ingredients_ingredients = @inventory_ingredients.map { |inventory_ingredient| inventory_ingredient.ingredient}
     # If called with ingredient query, find best match for ingredient ids and order recipes by matchcount
     if params.key?(:ingredients)
       # Example query: /?ingredients={ing_id},{ing_id}
@@ -18,6 +19,9 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @inventory = Inventory.find_by(user: current_user)
+    @inventory_ingredients = @inventory.inventory_ingredients
+    @inventory_ingredients_ingredients = @inventory_ingredients.map { |inventory_ingredient| inventory_ingredient.ingredient}
 
     @shopping_list = ShoppingList.find_by(user: current_user)
 

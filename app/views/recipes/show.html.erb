@@ -1,15 +1,37 @@
-<div class="page-container">
-  <div class="heading">
-    <h1>This is a show page</h1>
+<div class="container-sm">
+  <%= render partial: "shared/recipe_card", locals: { recipe: @recipe, ingredients: @inventory_ingredients_ingredients } %>
+  <div class="ingredients-details">
+    <div class="ingredients-details-grid">
+      <h5>You need</h5>
+      <h5>You have</h5>
+      <% @recipe.recipe_ingredients.each do |ingr| %>
+      <p><%= ingr.quantity %> <%= ingr.ingredient.category.measuring_unit %> <%= ingr.ingredient.name %></p>
+        <% if @inventory_ingredients_ingredients.include?(ingr.ingredient) %>
+          <% if @inventory_ingredients.find_by(ingredient_id: ingr.ingredient.id).quantity >= ingr.quantity%>
+            <div class="quantity-green">
+              <strong><p><%= @inventory_ingredients.find_by(ingredient_id: ingr.ingredient.id).quantity %> <%= ingr.ingredient.category.measuring_unit %></p></strong>
+            </div>
+          <% else %>
+            <div class="quantity-orange">
+              <strong><p><%= @inventory_ingredients.find_by(ingredient_id: ingr.ingredient.id).quantity %> <%= ingr.ingredient.category.measuring_unit %></p></strong>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="quantity-red">
+            <strong><p>-</p></strong>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="ingredients-details-description">
+      <h5>Description</h5>
+      <p><%= @recipe.description %></p>
+    </div>
   </div>
-
-  <div class="recipe-info">
-    <%= @recipe.name %>
-    <%= @recipe.description %>
-  </div>
-
-  <div class="add-to-recipe-btn">
-    <%= link_to("Add to shopping list", add_recipe_to_list_path(@shopping_list, @recipe),
-      data: { turbo_method: :post }) %>
+  <div class="banner-bottom">
+    <div class="bottom-btn">
+      <%= link_to("Add to shopping list", add_recipe_to_list_path(@shopping_list, @recipe),
+        data: { turbo_method: :post }) %>
+    </div>
   </div>
 </div>
