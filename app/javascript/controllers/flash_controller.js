@@ -4,16 +4,16 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["generic"]
 
-  async connect() {
-    await timeoutButton()
-    this.genericTarget.style.display="none"
-  }
-
-  async timeoutButton() {
-    await setTimeout(() => {
+  connect() {
+    // after 1 seconds start 2s fadeout
+    setTimeout(() => {
       this.genericTarget.style.transition= "opacity 2s ease";
       this.genericTarget.style.opacity="0"
-    }, 2000);
-  }
+    }, 1000);
 
+    // after 1+2 seconds dont display anymore
+    setTimeout(() => {
+      this.genericTarget.style.display="none"
+    }, 3000);
+  }
 }
