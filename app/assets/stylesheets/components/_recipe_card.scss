@@ -9,6 +9,13 @@
   box-shadow: 1px 1px 1px gray;
 }
 
+.match-count {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
 .recipe-details-card {
   display: flex;
   flex-direction: column;
