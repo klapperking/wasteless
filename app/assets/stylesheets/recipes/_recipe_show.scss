@@ -15,7 +15,8 @@
   margin: 10px 20px 0 20px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
+  gap: 55px;
+  row-gap: 03px;
   border-bottom: solid 2px black;
 }
 
