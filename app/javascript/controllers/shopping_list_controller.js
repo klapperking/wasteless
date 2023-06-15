@@ -1,8 +1,9 @@
 import { Controller } from "@hotwired/stimulus"
+import Quagga from 'quagga';
 
 // Connects to data-controller="shopping-list"
 export default class extends Controller {
-  static targets = ["form", "edit", "paragraph", "shopping"]
+  static targets = ["form", "edit", "paragraph", "shopping", "plus", "minus"]
   arrayIngredients = []
 
   connect() {
@@ -75,6 +76,10 @@ export default class extends Controller {
   }
 
   new() {
+    console.log(this.plusTarget);
+    console.log(this.minusTarget);
+    this.plusTarget.classList.toggle("d-none")
+    this.minusTarget.classList.toggle("d-none")
     this.formTarget.classList.toggle("d-none")
   }
 

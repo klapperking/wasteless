@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="selection"
 export default class extends Controller {
-  static targets = ["form", "input", "list", "add", "edit"]
+  static targets = ["form", "input", "list", "add", "edit", "plus", "minus"]
 
   arrayIngredients = []
   connect() {
@@ -59,6 +59,8 @@ export default class extends Controller {
   }
 
   new() {
+    this.plusTarget.classList.toggle("d-none")
+    this.minusTarget.classList.toggle("d-none")
     this.addTarget.classList.toggle("d-none")
   }
 
