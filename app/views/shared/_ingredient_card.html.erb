@@ -9,7 +9,7 @@
       <p><%= inventory_ingredient.ingredient.name%></p>
     </div>
     <div id="ingredient-qty">
-      <p data-selection-paragraph="<%= inventory_ingredient.id %>"><%= inventory_ingredient.format_float %> <%= inventory_ingredient.ingredient.category.measuring_unit %></p>
+      <p data-selection-paragraph="<%= inventory_ingredient.id %>"><%= inventory_ingredient.format_float %> <%= inventory_ingredient.ingredient.category.measuring_unit unless inventory_ingredient.ingredient.category.measuring_unit == "u." %></p>
        <div data-selection-form="<%= inventory_ingredient.id %>" class="d-none">
           <%= simple_form_for inventory_ingredient, html: { class:"form-update" } do |f| %>
             <%= f.input :quantity, label: false %>

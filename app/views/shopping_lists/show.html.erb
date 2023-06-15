@@ -43,7 +43,7 @@
                     <p><%= ingredient.name%></p>
                   </div>
                   <div id="ingredient-qty">
-                    <p data-shoppinglist-paragraph="<%= ingredient.id %>"><%= @shoppinglist_ingredients.find_by(ingredient:).quantity %></p>
+                    <p data-shoppinglist-paragraph="<%= ingredient.id %>"><%= @shoppinglist_ingredients.find_by(ingredient:).format_float %> <%= @shoppinglist_ingredients.find_by(ingredient:).ingredient.category.measuring_unit unless  @shoppinglist_ingredients.find_by(ingredient:).ingredient.category.measuring_unit == "u." %></p>
                     <div data-shoppinglist-form="<%= ingredient.id %>" class="d-none">
                       <%= simple_form_for @shoppinglist_ingredients.find_by(ingredient:), html: { class:"form-update" } do |f| %>
                         <%= f.input :quantity, label: false %>

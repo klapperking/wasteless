@@ -22,7 +22,7 @@
         <div class="ingredients-list-to">
           <% @shopping_list_ingredients.each do |ingredient, quantity| %>
             <ul>
-              <li><%= quantity %> - <%= ingredient.name %></li>
+              <li><%= quantity.to_f % 1 == 0 ? quantity.to_i : quantity %> <%= ingredient.category.measuring_unit unless ingredient.category.measuring_unit == "u." %> - <%= ingredient.name %></li>
             </ul>
           <% end %>
         </div>
