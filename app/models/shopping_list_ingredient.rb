@@ -7,4 +7,8 @@ class ShoppingListIngredient < ApplicationRecord
   validates :ingredient, presence: true
   validates :shopping_list, presence: true
   validates :quantity, presence: true
+
+  def format_float
+    quantity % 1 == 0 ? quantity.to_i : quantity
+  end
 end

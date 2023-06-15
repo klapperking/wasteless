@@ -21,6 +21,10 @@
 
   h5 {
     margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 19ch;
   }
 }
 
@@ -39,10 +43,6 @@
 #recipe-title {
   height: 40%;
   margin-top: 5px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-width: 200px;
 }
 
 #recipe-nb-ingredients {
