@@ -7,6 +7,9 @@ import { application } from "./application"
 import BarcodeHandlerController from "./barcode_handler_controller"
 application.register("barcode-handler", BarcodeHandlerController)
 
+import FlashController from "./flash_controller"
+application.register("flash", FlashController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

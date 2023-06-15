@@ -9,12 +9,14 @@
               scan: true
               )
             ) do %>
-            <i class="fa-solid fa-camera-retro"></i>
+            <%= image_tag "barcode-scan-icon.jpg", class: "avatar" %>
           <% end %>
         <% end %>
       </div>
       <div>
-        <%= image_tag "logo-green-cropped.PNG", class: "logo" %>
+        <%= link_to(root_path()) do %>
+          <%= image_tag "logo-green-cropped.PNG", class: "logo" %>
+        <% end %>
       </div>
       <div class="navbar-position">
         <ul class="navbar-nav">

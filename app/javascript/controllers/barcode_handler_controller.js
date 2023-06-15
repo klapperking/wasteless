@@ -4,7 +4,7 @@ import Quagga from 'quagga';
 
 // Connects to data-controller="barcode-handler"
 export default class extends Controller {
-  static targets = ["videoInput", "add", "form"]
+  static targets = ["videoInput", "add", "form", "quantity"]
 
   connect() {
     const url = new URL(window.location.href);
@@ -22,26 +22,27 @@ export default class extends Controller {
   async findbyBarcode() {
     // Function triggered by change-event on image input
 
-    console.log(this.videoInputTarget.files[0])
-    console.log(URL.createObjectURL(this.videoInputTarget.files[0]))
-
     // attempt to locate and read barcode in image
     let detectedResult = await this.detectBarcode()
-    if (detectedResult) {
-      let barcode = detectedResult.codeResult.code
+    console.log(detectedResult)
+    if (!detectedResult) {
+      // render flash
+      const flash_html = "<div class='alert alert-warning alert-dismissible fade show m-1' role='alert' data-controller='flash' data-flash-target='generic'>Couldn't find a barcode in the image<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>"
+
+      this.element.insertAdjacentHTML("afterend", flash_html)
+      return
     }
 
-    // for now harcoded Gallo Spaghetti
-    let barcode = "8410069018540"
-    // let integrealBarcode = "8426765496295"
+    const barcode = detectedResult.codeResult.code
+    // Demo: Fallback harcoded Gallo Spaghetti
+    // let barcode = "8410069018540"
+    //let integrealBarcode = "8426765496295"
 
     let offUrl = `https://world.openfoodfacts.org/api/v0/product/${barcode}.json`
 
     let ingredientInfo = await fetch(offUrl).then(response => response.json())
-    console.log(ingredientInfo)
-
     let ingredientName = ingredientInfo.product.product_name
-    console.log(ingredientName)
+    let ingredientQuantity = ingredientInfo.product.product_quantity
 
     // set form target to ingredient name
     for (var i = 0; i < this.formTarget.options.length; i++) {
@@ -51,6 +52,7 @@ export default class extends Controller {
       if (option.text === ingredientName) {
         // Set the selected option based on its value
         this.formTarget.value = option.value;
+        this.quantityTarget.value = ingredientQuantity
         break;
       }
     }
@@ -61,7 +63,7 @@ export default class extends Controller {
     return new Promise((resolve) => {
       Quagga.decodeSingle({
         decoder: {
-            readers: ["ean_reader"]
+          readers: ["ean_reader"]
         },
         locate: true,
         src: `${URL.createObjectURL(this.videoInputTarget.files[0])}`
