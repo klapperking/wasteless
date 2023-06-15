@@ -29,7 +29,7 @@ export default class extends Controller {
       // render flash
       const flash_html = "<div class='alert alert-warning alert-dismissible fade show m-1' role='alert' data-controller='flash' data-flash-target='generic'>Couldn't find a barcode in the image<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>"
 
-      this.element.insertAdjacentHTML("afterend", flash_html)
+      document.body.insertAdjacentHTML("afterend", flash_html)
       return
     }
 

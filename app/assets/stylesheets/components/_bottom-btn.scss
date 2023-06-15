@@ -1,14 +1,14 @@
 .banner-bottom {
   background-color: white;
-  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 60px;
-  width: 100%;
   position: fixed;
   bottom: 70px;
-  margin: 10px 0 10px 0;
+  z-index: 1;
+  width: 100%;
+  left: 0;
 }
 
 .bottom-btn {
