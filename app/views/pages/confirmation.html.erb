@@ -12,7 +12,7 @@
         <div class="ingredients-list-to">
           <% @inventory_ingredients.each do |ingredient, quantity| %>
             <ul>
-              <li><%= ingredient.name %>; <%= quantity %></li>
+              <li><%= quantity %> - <%= ingredient.name %></li>
             </ul>
           <% end %>
         </div>
@@ -22,7 +22,7 @@
         <div class="ingredients-list-to">
           <% @shopping_list_ingredients.each do |ingredient, quantity| %>
             <ul>
-              <li><%= ingredient.name %>; <%= quantity %></li>
+              <li><%= quantity.to_f % 1 == 0 ? quantity.to_i : quantity %> <%= ingredient.category.measuring_unit unless ingredient.category.measuring_unit == "u." %> - <%= ingredient.name %></li>
             </ul>
           <% end %>
         </div>
@@ -31,7 +31,7 @@
   </div>
   <div class="banner-bottom">
     <div class="bottom-btn">
-      <%= link_to "Go Back to Home", root_path%>
+      <%= link_to "Go to Shopping List", shopping_list_path(@shopping_list)%>
     </div>
   </div>
 </div>

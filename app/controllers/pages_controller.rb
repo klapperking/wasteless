@@ -8,16 +8,17 @@ class PagesController < ApplicationController
     @inventory_ingredients_ingredients = @inventory_ingredients.map { |inventory_ingredient| inventory_ingredient.ingredient}
     @recipe = Recipe.last
     @ingredients = @inventory.inventory_ingredients
-    @my_ingredients = { "Expir. -2 days" => @ingredients.select { |ingredient| ingredient.expiration_date <= Date.today + 2}.count,
+    @my_ingredients = { "Expir. less than 2 days" => @ingredients.select { |ingredient| ingredient.expiration_date <= Date.today + 2}.count,
      "Expir. 2/4 days" => @ingredients.select { |ingredient| ingredient.expiration_date > Date.today + 2 && ingredient.expiration_date <= Date.today + 4}.count,
      "Expir. 5/7 days" => @ingredients.select { |ingredient| ingredient.expiration_date > Date.today + 4 && ingredient.expiration_date <= Date.today + 7}.count,
      "Expir. 1/2 weeks" => @ingredients.select { |ingredient| ingredient.expiration_date > Date.today + 7 && ingredient.expiration_date <= Date.today + 14}.count,
      "Expir. 2/4 weeks" => @ingredients.select { |ingredient| ingredient.expiration_date > Date.today + 14 && ingredient.expiration_date <= Date.today + 30}.count,
-     "Expir. +1 month" => @ingredients.select { |ingredient| ingredient.expiration_date > Date.today + 30}.count }
+     "Expir. more than 1 month" => @ingredients.select { |ingredient| ingredient.expiration_date > Date.today + 30}.count }
   end
 
   def confirmation
     # get all ingredients
+    @shopping_list = ShoppingList.find_by(user: current_user)
     @inventory = Inventory.find_by(user: current_user)
     @inventory_ingredients = @inventory.inventory_ingredients
     @inventory_ingredients_ingredients = @inventory_ingredients.map { |inventory_ingredient| inventory_ingredient.ingredient}

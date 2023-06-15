@@ -11,7 +11,8 @@
             data-barcode-handler-target="videoInput"
             style="display:none">
           <div id="add-btn" data-action="click->selection#new" data-barcode-handler-target="add">
-            <i class="fa-solid fa-plus"></i>
+            <i class="fa-solid fa-plus" data-selection-target="plus"></i>
+            <i class="fa-solid fa-minus d-none" data-selection-target="minus"></i>
           </div>
         </div>
       </div>
@@ -19,7 +20,7 @@
         <%= simple_form_for [@inventory, @inventory_ingredient] do |f| %>
           <%= f.input :ingredient_id, collection: Ingredient.all, input_html: { data: { barcode_handler_target: "form"}} %>
           <%= f.input :quantity, input_html: { data: { barcode_handler_target: "quantity"}} %>
-          <%= f.submit 'Add an ingredient'%>
+          <%= f.submit 'Add an ingredient', class:"submit-btn" %>
         <% end %>
       </div>
     </div>
@@ -27,14 +28,15 @@
       <div class="title-add">
       <h2><strong>Pick your ingredients!</strong></h2>
         <div id="add-btn" data-action="click->selection#new">
-          <i class="fa-solid fa-plus"></i>
+          <i class="fa-solid fa-plus" data-selection-target="plus"></i>
+          <i class="fa-solid fa-minus d-none" data-selection-target="minus"></i>
         </div>
       </div>
       <div class="d-none" data-selection-target="add" >
         <%= simple_form_for [@inventory, @inventory_ingredient] do |f| %>
           <%= f.input :ingredient_id, collection: Ingredient.all %>
           <%= f.input :quantity %>
-          <%= f.submit 'Add an ingredient'%>
+          <%= f.submit 'Add an ingredient', class:"submit-btn" %>
         <% end %>
       </div>
     <% end %>
@@ -44,7 +46,7 @@
         <%= text_field_tag :query,
               params[:query],
               class: "form-control",
-              placeholder: "Type a keyword",
+              placeholder: "Search for an ingredient",
               data: {selection_target: "input",
               action: "keyup->selection#update",
               }

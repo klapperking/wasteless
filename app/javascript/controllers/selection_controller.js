@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="selection"
 export default class extends Controller {
-  static targets = ["form", "input", "list", "add", "edit"]
+  static targets = ["form", "input", "list", "add", "edit", "plus", "minus"]
 
   arrayIngredients = []
   connect() {
@@ -36,10 +36,10 @@ export default class extends Controller {
   }
 
   update(event) {
-    console.log(event.currentTarget)
-    if (event.currentTarget.value.length > 0 && event.currentTarget.value.length < 3) {
-      return
-    }
+    // console.log(event.currentTarget)
+    // if (event.currentTarget.value.length > 0 && event.currentTarget.value.length < 3) {
+    //   return
+    // }
     const url = `${this.formTarget.action}?query=${this.inputTarget.value}`
     fetch(url, {headers: {"Accept": "text/plain"}})
     .then(response => response.text())
@@ -59,6 +59,8 @@ export default class extends Controller {
   }
 
   new() {
+    this.plusTarget.classList.toggle("d-none")
+    this.minusTarget.classList.toggle("d-none")
     this.addTarget.classList.toggle("d-none")
   }
 

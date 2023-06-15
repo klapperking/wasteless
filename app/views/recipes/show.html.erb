@@ -5,15 +5,15 @@
       <h5>You need</h5>
       <h5>You have</h5>
       <% @recipe.recipe_ingredients.each do |ingr| %>
-      <p><%= ingr.quantity %> <%= ingr.ingredient.category.measuring_unit %> <%= ingr.ingredient.name %></p>
+      <p><%= ingr.format_float %> <%= ingr.ingredient.category.measuring_unit unless ingr.ingredient.category.measuring_unit == "u." %> <%= ingr.ingredient.name %></p>
         <% if @inventory_ingredients_ingredients.include?(ingr.ingredient) %>
           <% if @inventory_ingredients.find_by(ingredient_id: ingr.ingredient.id).quantity >= ingr.quantity%>
             <div class="quantity-green">
-              <strong><p><%= @inventory_ingredients.find_by(ingredient_id: ingr.ingredient.id).quantity %> <%= ingr.ingredient.category.measuring_unit %></p></strong>
+              <strong><p><%= @inventory_ingredients.find_by(ingredient_id: ingr.ingredient.id).format_float %> <%= ingr.ingredient.category.measuring_unit unless ingr.ingredient.category.measuring_unit == "u." %></p></strong>
             </div>
           <% else %>
             <div class="quantity-orange">
-              <strong><p><%= @inventory_ingredients.find_by(ingredient_id: ingr.ingredient.id).quantity %> <%= ingr.ingredient.category.measuring_unit %></p></strong>
+              <strong><p><%= @inventory_ingredients.find_by(ingredient_id: ingr.ingredient.id).format_float %> <%= ingr.ingredient.category.measuring_unit unless ingr.ingredient.category.measuring_unit == "u." %></p></strong>
             </div>
           <% end %>
         <% else %>

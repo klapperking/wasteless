@@ -10,7 +10,7 @@
 .ingredient-name {
   font-weight: bold;
   font-size: 20px;
-  width: 50%;
+  width: 64%;
 
   p {
     margin: 0;
@@ -93,9 +93,19 @@
 }
 
 #ingredient-dropdown {
-  width: 20%;
+  width: 6%;
   font-weight: bold;
   font-size: 20px;
   text-align: right;
   margin-right: 5px;
+}
+
+// classes to remove the green check in the update form
+
+.form-control.is-valid {
+  background-image: none;
+}
+
+.control.is-valid {
+  background-color: none;
 }

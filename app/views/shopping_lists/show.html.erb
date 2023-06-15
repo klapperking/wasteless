@@ -5,7 +5,8 @@
         <h2>My Shopping List:</h2>
       </div>
       <div id="add-btn" data-action="click->shopping-list#new" >
-          <i class="fa-solid fa-plus"></i>
+          <i class="fa-solid fa-plus" data-shopping-list-target="plus"></i>
+          <i class="fa-solid fa-minus d-none" data-shopping-list-target="minus"></i>
       </div>
     </div>
   </div>
@@ -13,7 +14,7 @@
     <%= simple_form_for @shoppinglist_ingredient do |f| %>
       <%= f.input :ingredient_id, collection: Ingredient.all %>
       <%= f.input :quantity %>
-      <%= f.submit 'Add an ingredient'%>
+      <%= f.submit 'Add an ingredient', class:"submit-btn" %>
     <% end %>
   </div>
   <div>
@@ -42,7 +43,7 @@
                     <p><%= ingredient.name%></p>
                   </div>
                   <div id="ingredient-qty">
-                    <p data-shoppinglist-paragraph="<%= ingredient.id %>"><%= @shoppinglist_ingredients.find_by(ingredient:).quantity %></p>
+                    <p data-shoppinglist-paragraph="<%= ingredient.id %>"><%= @shoppinglist_ingredients.find_by(ingredient:).format_float %> <%= @shoppinglist_ingredients.find_by(ingredient:).ingredient.category.measuring_unit unless  @shoppinglist_ingredients.find_by(ingredient:).ingredient.category.measuring_unit == "u." %></p>
                     <div data-shoppinglist-form="<%= ingredient.id %>" class="d-none">
                       <%= simple_form_for @shoppinglist_ingredients.find_by(ingredient:), html: { class:"form-update" } do |f| %>
                         <%= f.input :quantity, label: false %>
