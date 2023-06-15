@@ -18,7 +18,7 @@
       <div class="d-none" data-selection-target="add" >
         <%= simple_form_for [@inventory, @inventory_ingredient] do |f| %>
           <%= f.input :ingredient_id, collection: Ingredient.all, input_html: { data: { barcode_handler_target: "form"}} %>
-          <%= f.input :quantity %>
+          <%= f.input :quantity, input_html: { data: { barcode_handler_target: "quantity"}} %>
           <%= f.submit 'Add an ingredient'%>
         <% end %>
       </div>
