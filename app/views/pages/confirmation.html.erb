@@ -6,26 +6,34 @@
   <div class="d-flex justify-content-center">
     <div class="update-ingredients-inventory-card">
       <div class="container-sm">
-        <div id="removed-inventory">
-          <h5>Removed from the inventory</h5>
-        </div>
-        <div class="ingredients-list-to">
-          <% @inventory_ingredients.each do |ingredient, quantity| %>
-            <ul>
-              <li><%= quantity %> - <%= ingredient.name %></li>
-            </ul>
-          <% end %>
-        </div>
-        <div id="added-shopping-list">
-          <h5>Added to the shopping list</h5>
-        </div>
-        <div class="ingredients-list-to">
-          <% @shopping_list_ingredients.each do |ingredient, quantity| %>
-            <ul>
-              <li><%= quantity.to_f % 1 == 0 ? quantity.to_i : quantity %> <%= ingredient.category.measuring_unit unless ingredient.category.measuring_unit == "u." %> - <%= ingredient.name %></li>
-            </ul>
-          <% end %>
-        </div>
+        <% if @inventory_ingredients.empty? %>
+          <p></p>
+        <% else %>
+          <div id="removed-inventory">
+            <h5>Removed from the inventory</h5>
+          </div>
+          <div class="ingredients-list-to">
+            <% @inventory_ingredients.each do |ingredient, quantity| %>
+              <ul>
+                <li><%= quantity.to_f % 1 == 0 ? quantity.to_i : quantity %> <%= ingredient.category.measuring_unit unless ingredient.category.measuring_unit == "u." %> - <%= ingredient.name %></li>
+              </ul>
+            <% end %>
+          </div>
+        <% end %>
+        <% if @shopping_list_ingredients.empty? %>
+          <p></p>
+        <% else %>
+          <div id="added-shopping-list">
+            <h5>Added to the shopping list</h5>
+          </div>
+          <div class="ingredients-list-to">
+            <% @shopping_list_ingredients.each do |ingredient, quantity| %>
+              <ul>
+                <li><%= quantity.to_f % 1 == 0 ? quantity.to_i : quantity %> <%= ingredient.category.measuring_unit unless ingredient.category.measuring_unit == "u." %> - <%= ingredient.name %></li>
+              </ul>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
