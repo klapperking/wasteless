@@ -18,6 +18,7 @@ class PagesController < ApplicationController
 
   def confirmation
     # get all ingredients
+    @shopping_list = ShoppingList.find_by(user: current_user)
     @inventory = Inventory.find_by(user: current_user)
     @inventory_ingredients = @inventory.inventory_ingredients
     @inventory_ingredients_ingredients = @inventory_ingredients.map { |inventory_ingredient| inventory_ingredient.ingredient}
