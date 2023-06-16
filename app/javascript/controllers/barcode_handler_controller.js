@@ -19,7 +19,7 @@ export default class extends Controller {
     }
   }
 
-  async findbyBarcode() {
+  findbyBarcode() {
     // Function triggered by change-event on image input
 
     // attempt to locate and read barcode in image
