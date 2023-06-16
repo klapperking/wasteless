@@ -12,7 +12,7 @@
   </div>
   <div class="d-none" data-shopping-list-target="form" >
     <%= simple_form_for @shoppinglist_ingredient do |f| %>
-      <%= f.input :ingredient_id, collection: Ingredient.all %>
+      <%= f.input :ingredient_id, collection: Ingredient.all.sort_by { |ing| ing.name } %>
       <%= f.input :quantity %>
       <%= f.submit 'Add an ingredient', class:"submit-btn" %>
     <% end %>
