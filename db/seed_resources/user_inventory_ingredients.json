@@ -1,36 +1,36 @@
 {
   "user_inventory_ingredients": [
     {
-      "user_email": "florian@wasteless.es",
+      "user_email": "martin@wasteless.es",
       "inventory_ingredients": [
         {
           "name": "Carrot",
           "quantity": 1,
-          "expiration_date": "2023-06-16"
+          "expiration_date": "2023-06-17"
         },
         {
           "name": "Spaghetti",
-          "quantity": 1000,
+          "quantity": 300,
           "expiration_date": "2024-01-01"
         },
         {
-          "name": "Olive oil",
+          "name": "Olive Oil",
           "quantity": 1000,
           "expiration_date": "2023-08-10"
         },
         {
-          "name": "minced beef",
+          "name": "Minced Beef",
           "quantity": 500,
-          "expiration_date": "2023-06-16"
+          "expiration_date": "2023-06-17"
         },
         {
           "name": "Red Wine",
-          "quantity": 2,
+          "quantity": 200,
           "expiration_date": "2025-05-05"
         },
         {
           "name": "Celery",
-          "quantity": 3,
+          "quantity": 1,
           "expiration_date": "2023-06-18"
         },
         {
@@ -40,8 +40,18 @@
         },
         {
           "name": "Onion",
-          "quantity": 6,
+          "quantity": 4,
           "expiration_date": "2023-07-02"
+        },
+        {
+          "name": "Garlic",
+          "quantity": 3,
+          "expiration_date": "2023-07-02"
+        },
+        {
+          "name": "Rice",
+          "quantity": 500,
+          "expiration_date": "2023-12-01"
         }
       ]
     }

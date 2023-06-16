@@ -1,22 +1,22 @@
 {
   "user_shopping_list_ingredients": [
     {
-      "user_email": "florian@wasteless.es",
+      "user_email": "martin@wasteless.es",
       "shopping_list_ingredients": [
         {
-          "name": "Tomato sauce",
+          "name": "Tomato Sauce",
           "quantity": 300
         },
         {
-          "name": "Tomato paste",
+          "name": "Tomato Paste",
           "quantity": 15
         },
         {
-          "name": "Bay leaf",
+          "name": "Bay Leaf",
           "quantity": 2
         },
         {
-          "name": "minced pork",
+          "name": "Minced Pork",
           "quantity": 300
         }
       ]

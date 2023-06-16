@@ -43,7 +43,7 @@
           "quantity": 1
         },
         {
-          "name": "Green beans",
+          "name": "Green Beans",
           "quantity": 20
         },
         {
@@ -75,7 +75,7 @@
           "quantity": 3
         },
         {
-          "name": "Olive oil",
+          "name": "Olive Oil",
           "quantity": 30
         },
         {
@@ -99,7 +99,7 @@
           "quantity": 4
         },
         {
-          "name": "Olive oil",
+          "name": "Olive Oil",
           "quantity": 30
         },
         {
@@ -119,7 +119,7 @@
       "number_of_people": "3",
       "recipe_ingredients": [
         {
-          "name": "Olive oil",
+          "name": "Olive Oil",
           "quantity": 80
         },
         {
@@ -187,7 +187,7 @@
           "quantity": 1
         },
         {
-          "name": "Olive oil",
+          "name": "Olive Oil",
           "quantity": 15
         },
         {
@@ -195,11 +195,11 @@
           "quantity": 1
         },
         {
-          "name": "minced beef",
+          "name": "Minced Beef",
           "quantity": 300
         },
         {
-          "name": "minced pork",
+          "name": "Minced Pork",
           "quantity": 300
         },
         {
@@ -207,15 +207,15 @@
           "quantity": 100
         },
         {
-          "name": "Tomato paste",
+          "name": "Tomato Paste",
           "quantity": 15
         },
         {
-          "name": "Tomato sauce",
+          "name": "Tomato Sauce",
           "quantity": 300
         },
         {
-          "name": "Bay leaf",
+          "name": "Bay Leaf",
           "quantity": 2
         }
       ]
