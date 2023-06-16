@@ -7,7 +7,7 @@
         <div>
           <input type="file" name="image" accept="image/*"
             capture="environment"
-            data-action="change->barcode-handler#findbyBarcode"
+            data-action="click->barcode-handler#findbyBarcode"
             data-barcode-handler-target="videoInput"
             style="display:none">
           <div id="add-btn" data-action="click->selection#new" data-barcode-handler-target="add">
@@ -58,6 +58,6 @@
 </div>
   <%= render partial: "inventory_ingredients", locals: { inventory_ingredients: @inventory_ingredients } %>
   <div class="banner-bottom">
-    <button class="bottom-btn" data-action="click->selection#submit"> Get me recipes! </button>
+    <div class="bottom-btn" data-action="click->selection#submit"> Get me recipes! </div>
   </div>
 </div>
