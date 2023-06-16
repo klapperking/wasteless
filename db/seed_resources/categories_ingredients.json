@@ -29,7 +29,7 @@
       },
       "ingredients": [
         "Chicken breast",
-        "minced beef",
+        "Minced Beef",
         "Pork chops",
         "Lamb shoulder",
         "Bacon",
@@ -38,7 +38,7 @@
         "Sausages",
         "Ham",
         "Ground turkey",
-        "minced pork"
+        "Minced Pork"
       ]
     },
     {
@@ -51,14 +51,14 @@
       "ingredients": [
         "Rice",
         "Basmati rice",
-        "Black beans",
+        "Black Beans",
         "Lentils",
         "Chickpeas",
         "Jasmine rice",
         "Green lentils",
-        "Pinto beans",
+        "Pinto Beans",
         "Quinoa",
-        "Green beans"
+        "Green Beans"
       ]
     },
     {
@@ -153,7 +153,7 @@
       },
       "ingredients": [
         "Vegetable oil",
-        "Olive oil",
+        "Olive Oil",
         "Vinegar",
         "Honey",
         "Maple syrup",
@@ -188,7 +188,7 @@
       },
       "ingredients": [
         "Lemon juice",
-        "Tomato sauce",
+        "Tomato Sauce",
         "Barbecue sauce",
         "Soy sauce",
         "Teriyaki sauce",
@@ -225,7 +225,7 @@
         "Basil",
         "Mint",
         "Chives",
-        "Bay leaf"
+        "Bay Leaf"
       ]
     },
     {
@@ -239,7 +239,7 @@
         "Red Curry Paste",
         "Paprika Powder",
         "Saffron",
-        "Tomato paste"
+        "Tomato Paste"
       ]
     }
   ]

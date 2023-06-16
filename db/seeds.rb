@@ -61,6 +61,7 @@ puts "Creating recipes..."
 recipes_json = JSON.parse(File.read("#{seed_resource_dir}/recipes.json"))
 
 recipes_json['recipes'].each do |recipe|
+  p recipe['name']
   # read recipe attributes
   recipe_attributes = {
     name: recipe['name'],
